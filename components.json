@@ -1,0 +1,9 @@
+{
+  "btn-primary": [],
+  "btn-secondary": [],
+  "card": [
+    ".card {\n-webkit-backdrop-filter: brightness(200%) blur(13px);\n  backdrop-filter: brightness(200%) blur(13px);\n  background-color: #ffffff4f;\n  width: 500px;\n  height: 250px;\n  position: absolute;\n  inset: 31% auto auto 61%;\n}"
+  ],
+  "input": [],
+  "nav-link": []
+}
