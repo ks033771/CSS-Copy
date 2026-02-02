@@ -2047,9 +2047,19 @@ textarea.w-input, textarea.w-select {
 }
 
 :root {
+  --black: black;
   --size: 0px;
   --white: white;
-  --black: black;
+}
+
+p {
+  color: var(--Text-text, #36362f);
+  font-feature-settings: "liga" off, "clig" off;
+  margin-bottom: 10px;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .html-embed {
@@ -2204,30 +2214,48 @@ textarea.w-input, textarea.w-select {
 }
 
 .btn-primary {
-  background-color: #ff0004;
-  padding: 47px;
+  place-content: center;
+  align-items: center;
+  gap: .5rem var(--space-sm, .5rem);
+  background-color: #a20a29;
+  flex-wrap: wrap;
+  min-width: 9.875rem;
+  max-width: 18rem;
+  padding: .65625rem;
   font-family: Varela Round, sans-serif;
+  font-size: 1.125rem;
   font-weight: 400;
+  line-height: 1.5;
+  display: flex;
 }
 
 .btn-primary:hover {
-  background-color: #ffcdcd;
+  background-color: #850822;
 }
 
 .btn-primary:focus {
-  background-color: #610506;
+  background-color: #6d071c;
   border: 4px solid #000;
 }
 
 .btn-secondary {
-  background-color: #001eff;
-  padding: 97px 47px;
-  font-family: Varela Round, sans-serif;
+  color: var(--black);
+  text-align: center;
+  padding: .65625rem var(--space-md, 1rem);
+  place-content: center;
+  align-items: center;
+  gap: .5rem var(--space-sm, .5rem);
+  background-color: #0000;
+  border: 1px solid #6d6e68;
+  flex-wrap: wrap;
+  min-width: 9.875rem;
+  max-width: 18rem;
+  font-size: 1.12rem;
   font-weight: 400;
 }
 
 .btn-secondary:hover {
-  background-color: #a3aeff;
+  border-width: 2px;
 }
 
 .code-embed {
@@ -2238,10 +2266,27 @@ textarea.w-input, textarea.w-select {
   position: relative;
 }
 
-.heading {
+.heading-mega {
+  font-feature-settings: "liga" off, "clig" off;
   margin-top: 34px;
   margin-bottom: 34px;
-  font-size: 4rem;
+  font-size: 3.375rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.div-block {
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  display: flex;
+}
+
+.container {
+  max-width: 900px;
+  margin-bottom: 4rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media screen and (max-width: 991px) {
