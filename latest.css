@@ -2203,6 +2203,13 @@ textarea.w-input, textarea.w-select {
   position: relative;
 }
 
+.btn-primary {
+  background-color: #ff0004;
+  padding: 47px;
+  font-family: Varela Round, sans-serif;
+  font-weight: 400;
+}
+
 @media screen and (max-width: 767px) {
   .table_cell.first-in-col {
     min-width: 8rem;

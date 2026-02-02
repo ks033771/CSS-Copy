@@ -1,5 +1,7 @@
 {
-  "btn-primary": [],
+  "btn-primary": [
+    ".btn-primary {\nbackground-color: #ff0004;\n  padding: 47px;\n  font-family: Varela Round, sans-serif;\n  font-weight: 400;\n}"
+  ],
   "btn-secondary": [],
   "card": [
     ".card {\n-webkit-backdrop-filter: brightness(200%) blur(13px);\n  backdrop-filter: brightness(200%) blur(13px);\n  background-color: #ffffff4f;\n  width: 500px;\n  height: 250px;\n  position: absolute;\n  inset: 31% auto auto 61%;\n}"
