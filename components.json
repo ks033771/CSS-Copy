@@ -2,11 +2,14 @@
   "btn-primary": [
     ".btn-primary {\nbackground-color: #ff0004;\n  padding: 47px;\n  font-family: Varela Round, sans-serif;\n  font-weight: 400;\n}",
     ".btn-primary:hover {\nbackground-color: #ffcdcd;\n}",
-    ".btn-primary:focus {\nbackground-color: #610506;\n  border: 4px solid #000;\n}"
+    ".btn-primary:focus {\nbackground-color: #610506;\n  border: 4px solid #000;\n}",
+    "@media screen and (max-width: 991px) {\n  .btn-primary {\n    padding-left: 103px;\n    padding-right: 103px;\n  }\n\n  .btn-secondary {\n    padding-left: 145px;\n    padding-right: 145px;\n  }\n}"
   ],
   "btn-secondary": [
     ".btn-secondary {\nbackground-color: #001eff;\n  padding: 97px 47px;\n  font-family: Varela Round, sans-serif;\n  font-weight: 400;\n}",
-    ".btn-secondary:hover {\nbackground-color: #a3aeff;\n}"
+    ".btn-secondary:hover {\nbackground-color: #a3aeff;\n}",
+    ".btn-secondary {\npadding-left: 145px;\n    padding-right: 145px;\n}",
+    "@media screen and (max-width: 991px) {\n  .btn-primary {\n    padding-left: 103px;\n    padding-right: 103px;\n  }\n\n  .btn-secondary {\n    padding-left: 145px;\n    padding-right: 145px;\n  }\n}"
   ],
   "card": [
     ".card {\n-webkit-backdrop-filter: brightness(200%) blur(13px);\n  backdrop-filter: brightness(200%) blur(13px);\n  background-color: #ffffff4f;\n  width: 500px;\n  height: 250px;\n  position: absolute;\n  inset: 31% auto auto 61%;\n}"

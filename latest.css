@@ -2237,6 +2237,18 @@ textarea.w-input, textarea.w-select {
   position: relative;
 }
 
+@media screen and (max-width: 991px) {
+  .btn-primary {
+    padding-left: 103px;
+    padding-right: 103px;
+  }
+
+  .btn-secondary {
+    padding-left: 145px;
+    padding-right: 145px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .table_cell.first-in-col {
     min-width: 8rem;
