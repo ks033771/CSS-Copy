@@ -2210,6 +2210,13 @@ textarea.w-input, textarea.w-select {
   font-weight: 400;
 }
 
+.btn-secondary {
+  background-color: #001eff;
+  padding: 97px 47px;
+  font-family: Varela Round, sans-serif;
+  font-weight: 400;
+}
+
 @media screen and (max-width: 767px) {
   .table_cell.first-in-col {
     min-width: 8rem;
