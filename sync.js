@@ -35,6 +35,7 @@ function extractRelevantCSS(cssText, classes) {
   const components = {};
   classes.forEach(c => (components[c] = []));
 
+  // 🔹 1. Normale (nicht verschachtelte) Regeln
   const ruleRegex = /([^{@}][^{]*?)\{([^}]*)\}/g;
   let m;
 
@@ -50,8 +51,23 @@ function extractRelevantCSS(cssText, classes) {
     }
   }
 
+  // 🔹 2. Media Queries komplett erfassen
+  const mediaRegex = /@media[^{]+\{([\s\S]*?\})\s*\}/g;
+  let mediaMatch;
+
+  while ((mediaMatch = mediaRegex.exec(cssText)) !== null) {
+    const mediaBlock = mediaMatch[0];
+
+    for (const c of classes) {
+      if (mediaBlock.includes("." + c)) {
+        components[c].push(mediaBlock.trim());
+      }
+    }
+  }
+
   return components;
 }
+
 
 (async () => {
   try {
