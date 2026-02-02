@@ -13,41 +13,24 @@ async function fetchText(url) {
   return await res.text();
 }
 
-// 🔍 CSS URL aus Webflow HTML holen
+// 🔍 Webflow CSS URL aus veröffentlichter Seite holen
 function findWebflowCSSUrl(html) {
   const links = [...html.matchAll(/<link[^>]+href="([^"]+\.css)"/g)]
     .map(m => m[1]);
 
   const wfCss = links.find(url => url.includes("webflow"));
   if (!wfCss) throw new Error("Webflow CSS link not found");
+
   return wfCss;
 }
 
-// 🧠 Klassen aus markierten Elementen lesen
-function extractComponentClasses(html) {
-  const elements = [...html.matchAll(/<[^>]+>/g)];
-  const classes = new Set();
-
-  elements.forEach(el => {
-    const tag = el[0];
-
-    if (tag.includes('css-dok="true"')) {
-      const classMatch = tag.match(/class="([^"]+)"/);
-      if (classMatch) {
-        classMatch[1].split(/\s+/).forEach(c => {
-          if (!c.startsWith("w-")) {  // 🚫 Webflow system classes ignorieren
-            classes.add(c);
-          }
-        });
-      }
-    }
-  });
-
-  return [...classes];
+// 🧠 Alle Klassen aus CSS sammeln
+function extractAllClassesFromCSS(cssText) {
+  const matches = [...cssText.matchAll(/\.([a-zA-Z0-9_-]+)[\s\.\:\{]/g)];
+  return [...new Set(matches.map(m => m[1]))];
 }
 
-
-// 🎨 CSS Regeln extrahieren
+// 🎨 CSS Regeln je Klasse speichern
 function extractRelevantCSS(cssText, classes) {
   const components = {};
   classes.forEach(c => (components[c] = []));
@@ -81,8 +64,8 @@ function extractRelevantCSS(cssText, classes) {
     const css = await fetchText(cssUrl);
     fs.writeFileSync("latest.css", css, "utf8");
 
-    const classes = extractComponentClasses(html);
-    console.log("📦 Components found:", classes);
+    const classes = extractAllClassesFromCSS(css);
+    console.log(`📦 ${classes.length} CSS classes found`);
 
     const components = extractRelevantCSS(css, classes);
     fs.writeFileSync("components.json", JSON.stringify(components, null, 2), "utf8");
