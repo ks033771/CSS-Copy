@@ -1,20 +1,19 @@
 // sync.js
-// Lädt Webflow-CSS, extrahiert Regeln für definierte "Komponenten-Klassen"
+// Holt die veröffentlichte Webflow-Seite,
+// liest daraus automatisch die aktuelle Webflow-CSS-URL,
+// lädt das CSS, extrahiert definierte Komponenten-Klassen
 // und schreibt components.json + latest.css
 
 const fs = require("fs");
 
-const CSS_URL = process.env.CSS_URL;
-
-// Welche Klassen sollen als "Komponenten" dokumentiert werden?
-// -> trage hier deine System-Klassen ein (z.B. btn-primary, input, card, etc.)
+const PAGE_URL = process.env.PAGE_URL; // 👉 deine Webflow Seiten-URL
 const COMPONENT_CLASSES = (process.env.COMPONENT_CLASSES || "")
   .split(",")
   .map(s => s.trim())
   .filter(Boolean);
 
-if (!CSS_URL) {
-  console.error("Missing CSS_URL env var.");
+if (!PAGE_URL) {
+  console.error("Missing PAGE_URL env var.");
   process.exit(1);
 }
 
@@ -24,21 +23,21 @@ async function fetchText(url) {
   return await res.text();
 }
 
-// Hilfsfunktion: alle CSS-Blöcke (inkl. @media/@supports) grob erfassen
+// 🔍 Findet die aktuelle Webflow CSS Datei im HTML
+function findWebflowCSSUrl(html) {
+  const match = html.match(/https:\/\/cdn\.prod\.website-files\.com[^"]+\.css/);
+  if (!match) throw new Error("Webflow CSS link not found in page HTML");
+  return match[0];
+}
+
+// 🔧 CSS-Regeln für gewünschte Klassen extrahieren
 function extractRelevantCSS(cssText, classes) {
-  // Wenn keine Klassen angegeben sind: wir speichern nur das komplette CSS als latest.css
-  if (!classes.length) return { components: {}, snippets: [] };
+  if (!classes.length) return { components: {} };
 
   const components = {};
   classes.forEach(c => (components[c] = []));
 
-  // Sehr pragmatischer Ansatz:
-  // Wir suchen alle Vorkommen von ".class" in Regeln (auch :hover etc.),
-  // und nehmen den gesamten Regelblock auf.
-  //
-  // Das ist NICHT ein vollständiger CSS-Parser, aber in der Praxis für Webflow-Output
-  // oft ausreichend, solange du klare "System-Klassen" hast.
-  const ruleRegex = /([^{@}][^{]*?)\{([^}]*)\}/g; // einfache STYLE_RULE Blöcke
+  const ruleRegex = /([^{@}][^{]*?)\{([^}]*)\}/g;
   let m;
 
   while ((m = ruleRegex.exec(cssText)) !== null) {
@@ -47,9 +46,8 @@ function extractRelevantCSS(cssText, classes) {
     if (!selector || !body) continue;
 
     for (const c of classes) {
-      // Match .class als "Wort"
-      const classHit = new RegExp(`\\.${c}(?![\\w-])`).test(selector);
-      if (classHit) {
+      // Robuster Match (auch .btn-primary.w-button etc.)
+      if (selector.includes("." + c)) {
         components[c].push(`${selector} {\n${body}\n}`);
       }
     }
@@ -60,19 +58,27 @@ function extractRelevantCSS(cssText, classes) {
 
 (async () => {
   try {
-    const css = await fetchText(CSS_URL);
+    console.log("🌍 Fetching page:", PAGE_URL);
+    const html = await fetchText(PAGE_URL);
 
-    // 1) Immer die komplette CSS-Datei spiegeln (hilfreich fürs Debugging)
+    console.log("🔎 Finding Webflow CSS URL...");
+    const cssUrl = findWebflowCSSUrl(html);
+    console.log("🎨 CSS URL:", cssUrl);
+
+    const css = await fetchText(cssUrl);
+
+    // Snapshot der kompletten CSS-Datei
     fs.writeFileSync("latest.css", css, "utf8");
 
-    // 2) Komponenten extrahieren
+    // Komponenten extrahieren
     const { components } = extractRelevantCSS(css, COMPONENT_CLASSES);
     fs.writeFileSync("components.json", JSON.stringify(components, null, 2), "utf8");
 
     console.log("✔ Updated latest.css and components.json");
     console.log("✔ Classes:", COMPONENT_CLASSES.join(", ") || "(none)");
+
   } catch (err) {
-    console.error(err);
+    console.error("❌ Sync failed:", err.message);
     process.exit(1);
   }
 })();
