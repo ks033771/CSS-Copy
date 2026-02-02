@@ -47,7 +47,10 @@
     ".w-hidden-medium {\ndisplay: none !important;\n}",
     ".w-hidden-small {\ndisplay: none !important;\n}",
     ".w-hidden-main, .w-hidden-medium, .w-hidden-small {\ndisplay: inherit !important;\n}",
-    ".w-hidden-tiny {\ndisplay: none !important;\n}"
+    ".w-hidden-tiny {\ndisplay: none !important;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-button": [
     ".w-button {\ncolor: #fff;\n  line-height: inherit;\n  cursor: pointer;\n  background-color: #3898ec;\n  border: 0;\n  border-radius: 0;\n  padding: 9px 15px;\n  text-decoration: none;\n  display: inline-block;\n}",
@@ -183,14 +186,18 @@
     ".w-container:before, .w-container:after {\ncontent: \" \";\n  grid-area: 1 / 1 / 2 / 2;\n  display: table;\n}",
     ".w-container:after {\nclear: both;\n}",
     ".w-container .w-row {\nmargin-left: -10px;\n  margin-right: -10px;\n}",
-    ".w-row, .w-container .w-row {\nmargin-left: 0;\n    margin-right: 0;\n}"
+    ".w-row, .w-container .w-row {\nmargin-left: 0;\n    margin-right: 0;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-row": [
     ".w-container .w-row {\nmargin-left: -10px;\n  margin-right: -10px;\n}",
     ".w-row:before, .w-row:after {\ncontent: \" \";\n  grid-area: 1 / 1 / 2 / 2;\n  display: table;\n}",
     ".w-row:after {\nclear: both;\n}",
     ".w-row .w-row {\nmargin-left: 0;\n  margin-right: 0;\n}",
-    ".w-row, .w-container .w-row {\nmargin-left: 0;\n    margin-right: 0;\n}"
+    ".w-row, .w-container .w-row {\nmargin-left: 0;\n    margin-right: 0;\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col": [
     ".w-col {\nfloat: left;\n  width: 100%;\n  min-height: 1px;\n  padding-left: 10px;\n  padding-right: 10px;\n  position: relative;\n}",
@@ -245,7 +252,10 @@
     ".w-col-tiny-9 {\nwidth: 75%;\n}",
     ".w-col-tiny-10 {\nwidth: 83.3333%;\n}",
     ".w-col-tiny-11 {\nwidth: 91.6667%;\n}",
-    ".w-col-tiny-12 {\nwidth: 100%;\n}"
+    ".w-col-tiny-12 {\nwidth: 100%;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-1": [
     ".w-col-1 {\nwidth: 8.33333%;\n}",
@@ -289,138 +299,184 @@
   "w-hidden-main": [
     ".w-hidden-main {\ndisplay: none !important;\n}",
     ".w-hidden-main {\ndisplay: inherit !important;\n}",
-    ".w-hidden-main, .w-hidden-medium, .w-hidden-small {\ndisplay: inherit !important;\n}"
+    ".w-hidden-main, .w-hidden-medium, .w-hidden-small {\ndisplay: inherit !important;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-hidden-medium": [
     ".w-hidden-medium {\ndisplay: none !important;\n}",
-    ".w-hidden-main, .w-hidden-medium, .w-hidden-small {\ndisplay: inherit !important;\n}"
+    ".w-hidden-main, .w-hidden-medium, .w-hidden-small {\ndisplay: inherit !important;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-medium-1": [
     ".w-col-medium-1 {\nwidth: 8.33333%;\n}",
     ".w-col-medium-10 {\nwidth: 83.3333%;\n}",
     ".w-col-medium-11 {\nwidth: 91.6667%;\n}",
-    ".w-col-medium-12 {\nwidth: 100%;\n}"
+    ".w-col-medium-12 {\nwidth: 100%;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}"
   ],
   "w-col-medium-2": [
-    ".w-col-medium-2 {\nwidth: 16.6667%;\n}"
+    ".w-col-medium-2 {\nwidth: 16.6667%;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}"
   ],
   "w-col-medium-3": [
-    ".w-col-medium-3 {\nwidth: 25%;\n}"
+    ".w-col-medium-3 {\nwidth: 25%;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}"
   ],
   "w-col-medium-4": [
-    ".w-col-medium-4 {\nwidth: 33.3333%;\n}"
+    ".w-col-medium-4 {\nwidth: 33.3333%;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}"
   ],
   "w-col-medium-5": [
-    ".w-col-medium-5 {\nwidth: 41.6667%;\n}"
+    ".w-col-medium-5 {\nwidth: 41.6667%;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}"
   ],
   "w-col-medium-6": [
-    ".w-col-medium-6 {\nwidth: 50%;\n}"
+    ".w-col-medium-6 {\nwidth: 50%;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}"
   ],
   "w-col-medium-7": [
-    ".w-col-medium-7 {\nwidth: 58.3333%;\n}"
+    ".w-col-medium-7 {\nwidth: 58.3333%;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}"
   ],
   "w-col-medium-8": [
-    ".w-col-medium-8 {\nwidth: 66.6667%;\n}"
+    ".w-col-medium-8 {\nwidth: 66.6667%;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}"
   ],
   "w-col-medium-9": [
-    ".w-col-medium-9 {\nwidth: 75%;\n}"
+    ".w-col-medium-9 {\nwidth: 75%;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}"
   ],
   "w-col-medium-10": [
-    ".w-col-medium-10 {\nwidth: 83.3333%;\n}"
+    ".w-col-medium-10 {\nwidth: 83.3333%;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}"
   ],
   "w-col-medium-11": [
-    ".w-col-medium-11 {\nwidth: 91.6667%;\n}"
+    ".w-col-medium-11 {\nwidth: 91.6667%;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}"
   ],
   "w-col-medium-12": [
-    ".w-col-medium-12 {\nwidth: 100%;\n}"
+    ".w-col-medium-12 {\nwidth: 100%;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}"
   ],
   "w-col-stack": [
-    ".w-col-stack {\nwidth: 100%;\n    left: auto;\n    right: auto;\n}"
+    ".w-col-stack {\nwidth: 100%;\n    left: auto;\n    right: auto;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-container {\n    max-width: 728px;\n  }\n\n  .w-hidden-main {\n    display: inherit !important;\n  }\n\n  .w-hidden-medium {\n    display: none !important;\n  }\n\n  .w-col-medium-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-medium-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-medium-3 {\n    width: 25%;\n  }\n\n  .w-col-medium-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-medium-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-medium-6 {\n    width: 50%;\n  }\n\n  .w-col-medium-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-medium-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-medium-9 {\n    width: 75%;\n  }\n\n  .w-col-medium-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-medium-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-medium-12 {\n    width: 100%;\n  }\n\n  .w-col-stack {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n}"
   ],
   "w-hidden-small": [
     ".w-hidden-small {\ndisplay: none !important;\n}",
-    ".w-hidden-main, .w-hidden-medium, .w-hidden-small {\ndisplay: inherit !important;\n}"
+    ".w-hidden-main, .w-hidden-medium, .w-hidden-small {\ndisplay: inherit !important;\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-small-1": [
     ".w-col-small-1 {\nwidth: 8.33333%;\n}",
     ".w-col-small-10 {\nwidth: 83.3333%;\n}",
     ".w-col-small-11 {\nwidth: 91.6667%;\n}",
-    ".w-col-small-12 {\nwidth: 100%;\n}"
+    ".w-col-small-12 {\nwidth: 100%;\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-small-2": [
-    ".w-col-small-2 {\nwidth: 16.6667%;\n}"
+    ".w-col-small-2 {\nwidth: 16.6667%;\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-small-3": [
-    ".w-col-small-3 {\nwidth: 25%;\n}"
+    ".w-col-small-3 {\nwidth: 25%;\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-small-4": [
-    ".w-col-small-4 {\nwidth: 33.3333%;\n}"
+    ".w-col-small-4 {\nwidth: 33.3333%;\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-small-5": [
-    ".w-col-small-5 {\nwidth: 41.6667%;\n}"
+    ".w-col-small-5 {\nwidth: 41.6667%;\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-small-6": [
-    ".w-col-small-6 {\nwidth: 50%;\n}"
+    ".w-col-small-6 {\nwidth: 50%;\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-small-7": [
-    ".w-col-small-7 {\nwidth: 58.3333%;\n}"
+    ".w-col-small-7 {\nwidth: 58.3333%;\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-small-8": [
-    ".w-col-small-8 {\nwidth: 66.6667%;\n}"
+    ".w-col-small-8 {\nwidth: 66.6667%;\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-small-9": [
-    ".w-col-small-9 {\nwidth: 75%;\n}"
+    ".w-col-small-9 {\nwidth: 75%;\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-small-10": [
-    ".w-col-small-10 {\nwidth: 83.3333%;\n}"
+    ".w-col-small-10 {\nwidth: 83.3333%;\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-small-11": [
-    ".w-col-small-11 {\nwidth: 91.6667%;\n}"
+    ".w-col-small-11 {\nwidth: 91.6667%;\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-small-12": [
-    ".w-col-small-12 {\nwidth: 100%;\n}"
+    ".w-col-small-12 {\nwidth: 100%;\n}",
+    "@media screen and (max-width: 767px) {\n  .w-hidden-main, .w-hidden-medium {\n    display: inherit !important;\n  }\n\n  .w-hidden-small {\n    display: none !important;\n  }\n\n  .w-row, .w-container .w-row {\n    margin-left: 0;\n    margin-right: 0;\n  }\n\n  .w-col {\n    width: 100%;\n    left: auto;\n    right: auto;\n  }\n\n  .w-col-small-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-small-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-small-3 {\n    width: 25%;\n  }\n\n  .w-col-small-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-small-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-small-6 {\n    width: 50%;\n  }\n\n  .w-col-small-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-small-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-small-9 {\n    width: 75%;\n  }\n\n  .w-col-small-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-small-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-small-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-hidden-tiny": [
-    ".w-hidden-tiny {\ndisplay: none !important;\n}"
+    ".w-hidden-tiny {\ndisplay: none !important;\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-tiny-1": [
     ".w-col-tiny-1 {\nwidth: 8.33333%;\n}",
     ".w-col-tiny-10 {\nwidth: 83.3333%;\n}",
     ".w-col-tiny-11 {\nwidth: 91.6667%;\n}",
-    ".w-col-tiny-12 {\nwidth: 100%;\n}"
+    ".w-col-tiny-12 {\nwidth: 100%;\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-tiny-2": [
-    ".w-col-tiny-2 {\nwidth: 16.6667%;\n}"
+    ".w-col-tiny-2 {\nwidth: 16.6667%;\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-tiny-3": [
-    ".w-col-tiny-3 {\nwidth: 25%;\n}"
+    ".w-col-tiny-3 {\nwidth: 25%;\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-tiny-4": [
-    ".w-col-tiny-4 {\nwidth: 33.3333%;\n}"
+    ".w-col-tiny-4 {\nwidth: 33.3333%;\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-tiny-5": [
-    ".w-col-tiny-5 {\nwidth: 41.6667%;\n}"
+    ".w-col-tiny-5 {\nwidth: 41.6667%;\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-tiny-6": [
-    ".w-col-tiny-6 {\nwidth: 50%;\n}"
+    ".w-col-tiny-6 {\nwidth: 50%;\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-tiny-7": [
-    ".w-col-tiny-7 {\nwidth: 58.3333%;\n}"
+    ".w-col-tiny-7 {\nwidth: 58.3333%;\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-tiny-8": [
-    ".w-col-tiny-8 {\nwidth: 66.6667%;\n}"
+    ".w-col-tiny-8 {\nwidth: 66.6667%;\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-tiny-9": [
-    ".w-col-tiny-9 {\nwidth: 75%;\n}"
+    ".w-col-tiny-9 {\nwidth: 75%;\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-tiny-10": [
-    ".w-col-tiny-10 {\nwidth: 83.3333%;\n}"
+    ".w-col-tiny-10 {\nwidth: 83.3333%;\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-tiny-11": [
-    ".w-col-tiny-11 {\nwidth: 91.6667%;\n}"
+    ".w-col-tiny-11 {\nwidth: 91.6667%;\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-col-tiny-12": [
-    ".w-col-tiny-12 {\nwidth: 100%;\n}"
+    ".w-col-tiny-12 {\nwidth: 100%;\n}",
+    "@media screen and (max-width: 479px) {\n  .w-container {\n    max-width: none;\n  }\n\n  .w-hidden-main, .w-hidden-medium, .w-hidden-small {\n    display: inherit !important;\n  }\n\n  .w-hidden-tiny {\n    display: none !important;\n  }\n\n  .w-col {\n    width: 100%;\n  }\n\n  .w-col-tiny-1 {\n    width: 8.33333%;\n  }\n\n  .w-col-tiny-2 {\n    width: 16.6667%;\n  }\n\n  .w-col-tiny-3 {\n    width: 25%;\n  }\n\n  .w-col-tiny-4 {\n    width: 33.3333%;\n  }\n\n  .w-col-tiny-5 {\n    width: 41.6667%;\n  }\n\n  .w-col-tiny-6 {\n    width: 50%;\n  }\n\n  .w-col-tiny-7 {\n    width: 58.3333%;\n  }\n\n  .w-col-tiny-8 {\n    width: 66.6667%;\n  }\n\n  .w-col-tiny-9 {\n    width: 75%;\n  }\n\n  .w-col-tiny-10 {\n    width: 83.3333%;\n  }\n\n  .w-col-tiny-11 {\n    width: 91.6667%;\n  }\n\n  .w-col-tiny-12 {\n    width: 100%;\n  }\n}"
   ],
   "w-widget": [
     "}\n\n.w-widget {\nposition: relative;\n}",
@@ -651,7 +707,9 @@
   ],
   "w-nav-brand": [
     ".w-nav-brand {\nfloat: left;\n  color: #333;\n  text-decoration: none;\n  position: relative;\n}",
-    ".w-nav-brand {\npadding-left: 10px;\n}"
+    ".w-nav-brand {\npadding-left: 10px;\n}",
+    "@media screen and (max-width: 767px) {\n  .w-nav-brand {\n    padding-left: 10px;\n  }\n}",
+    "@media screen and (max-width: 767px) {\n  .w-nav[data-collapse=\"small\"] .w-nav-menu {\n    display: none;\n  }\n\n  .w-nav[data-collapse=\"small\"] .w-nav-button {\n    display: block;\n  }\n\n  .w-nav-brand {\n    padding-left: 10px;\n  }\n}"
   ],
   "w-lightbox-backdrop": [
     "}\n\n.w-lightbox-backdrop {\ncursor: auto;\n  letter-spacing: normal;\n  text-indent: 0;\n  text-shadow: none;\n  text-transform: none;\n  visibility: visible;\n  white-space: normal;\n  word-break: normal;\n  word-spacing: normal;\n  word-wrap: normal;\n  color: #fff;\n  text-align: center;\n  z-index: 2000;\n  opacity: 0;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -webkit-tap-highlight-color: transparent;\n  background: #000000e6;\n  outline: 0;\n  font-family: Helvetica Neue, Helvetica, Ubuntu, Segoe UI, Verdana, sans-serif;\n  font-size: 17px;\n  font-style: normal;\n  font-weight: 300;\n  line-height: 1.2;\n  list-style: disc;\n  position: fixed;\n  inset: 0;\n  -webkit-transform: translate(0);\n}",
@@ -661,7 +719,8 @@
     ".w-lightbox-backdrop, .w-lightbox-container {\n-webkit-overflow-scrolling: touch;\n  height: 100%;\n  overflow: auto;\n}"
   ],
   "w-lightbox-content": [
-    ".w-lightbox-content {\nheight: 100vh;\n  position: relative;\n  overflow: hidden;\n}"
+    ".w-lightbox-content {\nheight: 100vh;\n  position: relative;\n  overflow: hidden;\n}",
+    "@media (min-width: 768px) {\n  .w-lightbox-content {\n    height: 96vh;\n    margin-top: 2vh;\n  }\n\n  .w-lightbox-view, .w-lightbox-view:before {\n    height: 96vh;\n  }\n\n  .w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {\n    height: 84vh;\n  }\n\n  .w-lightbox-image {\n    max-width: 96vw;\n    max-height: 96vh;\n  }\n\n  .w-lightbox-group .w-lightbox-image {\n    max-width: 82.3vw;\n    max-height: 84vh;\n  }\n\n  .w-lightbox-left, .w-lightbox-right {\n    opacity: .5;\n    display: block;\n  }\n\n  .w-lightbox-close {\n    opacity: .8;\n  }\n\n  .w-lightbox-control:hover {\n    opacity: 1;\n  }\n}"
   ],
   "w-lightbox-view": [
     ".w-lightbox-view {\nopacity: 0;\n  width: 100vw;\n  height: 100vh;\n  position: absolute;\n}",
@@ -669,14 +728,16 @@
     ".w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {\nheight: 86vh;\n}",
     ".w-lightbox-frame, .w-lightbox-view:before {\nvertical-align: middle;\n  display: inline-block;\n}",
     ".w-lightbox-view, .w-lightbox-view:before {\nheight: 96vh;\n}",
-    ".w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {\nheight: 84vh;\n}"
+    ".w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {\nheight: 84vh;\n}",
+    "@media (min-width: 768px) {\n  .w-lightbox-content {\n    height: 96vh;\n    margin-top: 2vh;\n  }\n\n  .w-lightbox-view, .w-lightbox-view:before {\n    height: 96vh;\n  }\n\n  .w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {\n    height: 84vh;\n  }\n\n  .w-lightbox-image {\n    max-width: 96vw;\n    max-height: 96vh;\n  }\n\n  .w-lightbox-group .w-lightbox-image {\n    max-width: 82.3vw;\n    max-height: 84vh;\n  }\n\n  .w-lightbox-left, .w-lightbox-right {\n    opacity: .5;\n    display: block;\n  }\n\n  .w-lightbox-close {\n    opacity: .8;\n  }\n\n  .w-lightbox-control:hover {\n    opacity: 1;\n  }\n}"
   ],
   "w-lightbox-group": [
     ".w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {\nheight: 86vh;\n}",
     ".w-lightbox-group .w-lightbox-figure {\ncursor: pointer;\n}",
     ".w-lightbox-group .w-lightbox-image {\nmax-height: 86vh;\n}",
     ".w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {\nheight: 84vh;\n}",
-    ".w-lightbox-group .w-lightbox-image {\nmax-width: 82.3vw;\n    max-height: 84vh;\n}"
+    ".w-lightbox-group .w-lightbox-image {\nmax-width: 82.3vw;\n    max-height: 84vh;\n}",
+    "@media (min-width: 768px) {\n  .w-lightbox-content {\n    height: 96vh;\n    margin-top: 2vh;\n  }\n\n  .w-lightbox-view, .w-lightbox-view:before {\n    height: 96vh;\n  }\n\n  .w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {\n    height: 84vh;\n  }\n\n  .w-lightbox-image {\n    max-width: 96vw;\n    max-height: 96vh;\n  }\n\n  .w-lightbox-group .w-lightbox-image {\n    max-width: 82.3vw;\n    max-height: 84vh;\n  }\n\n  .w-lightbox-left, .w-lightbox-right {\n    opacity: .5;\n    display: block;\n  }\n\n  .w-lightbox-close {\n    opacity: .8;\n  }\n\n  .w-lightbox-control:hover {\n    opacity: 1;\n  }\n}"
   ],
   "w-lightbox-figure": [
     ".w-lightbox-figure {\nmargin: 0;\n  position: relative;\n}",
@@ -689,7 +750,8 @@
     ".w-lightbox-image {\nfloat: none;\n  max-width: 100vw;\n  max-height: 100vh;\n  display: block;\n}",
     ".w-lightbox-group .w-lightbox-image {\nmax-height: 86vh;\n}",
     ".w-lightbox-image {\nmax-width: 96vw;\n    max-height: 96vh;\n}",
-    ".w-lightbox-group .w-lightbox-image {\nmax-width: 82.3vw;\n    max-height: 84vh;\n}"
+    ".w-lightbox-group .w-lightbox-image {\nmax-width: 82.3vw;\n    max-height: 84vh;\n}",
+    "@media (min-width: 768px) {\n  .w-lightbox-content {\n    height: 96vh;\n    margin-top: 2vh;\n  }\n\n  .w-lightbox-view, .w-lightbox-view:before {\n    height: 96vh;\n  }\n\n  .w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {\n    height: 84vh;\n  }\n\n  .w-lightbox-image {\n    max-width: 96vw;\n    max-height: 96vh;\n  }\n\n  .w-lightbox-group .w-lightbox-image {\n    max-width: 82.3vw;\n    max-height: 84vh;\n  }\n\n  .w-lightbox-left, .w-lightbox-right {\n    opacity: .5;\n    display: block;\n  }\n\n  .w-lightbox-close {\n    opacity: .8;\n  }\n\n  .w-lightbox-control:hover {\n    opacity: 1;\n  }\n}"
   ],
   "w-lightbox-caption": [
     ".w-lightbox-caption {\ntext-align: left;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  background: #0006;\n  padding: .5em 1em;\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  overflow: hidden;\n}"
@@ -700,19 +762,23 @@
   ],
   "w-lightbox-control": [
     ".w-lightbox-control {\ncursor: pointer;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: 24px;\n  width: 4em;\n  transition: all .3s;\n  position: absolute;\n  top: 0;\n}",
-    ".w-lightbox-control:hover {\nopacity: 1;\n}"
+    ".w-lightbox-control:hover {\nopacity: 1;\n}",
+    "@media (min-width: 768px) {\n  .w-lightbox-content {\n    height: 96vh;\n    margin-top: 2vh;\n  }\n\n  .w-lightbox-view, .w-lightbox-view:before {\n    height: 96vh;\n  }\n\n  .w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {\n    height: 84vh;\n  }\n\n  .w-lightbox-image {\n    max-width: 96vw;\n    max-height: 96vh;\n  }\n\n  .w-lightbox-group .w-lightbox-image {\n    max-width: 82.3vw;\n    max-height: 84vh;\n  }\n\n  .w-lightbox-left, .w-lightbox-right {\n    opacity: .5;\n    display: block;\n  }\n\n  .w-lightbox-close {\n    opacity: .8;\n  }\n\n  .w-lightbox-control:hover {\n    opacity: 1;\n  }\n}"
   ],
   "w-lightbox-left": [
     ".w-lightbox-left {\nbackground-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0yMCAwIDI0IDQwIiB3aWR0aD0iMjQiIGhlaWdodD0iNDAiPjxnIHRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHBhdGggZD0ibTAgMGg1djIzaDIzdjVoLTI4eiIgb3BhY2l0eT0iLjQiLz48cGF0aCBkPSJtMSAxaDN2MjNoMjN2M2gtMjZ6IiBmaWxsPSIjZmZmIi8+PC9nPjwvc3ZnPg==\");\n  display: none;\n  bottom: 0;\n  left: 0;\n}",
-    ".w-lightbox-left, .w-lightbox-right {\nopacity: .5;\n    display: block;\n}"
+    ".w-lightbox-left, .w-lightbox-right {\nopacity: .5;\n    display: block;\n}",
+    "@media (min-width: 768px) {\n  .w-lightbox-content {\n    height: 96vh;\n    margin-top: 2vh;\n  }\n\n  .w-lightbox-view, .w-lightbox-view:before {\n    height: 96vh;\n  }\n\n  .w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {\n    height: 84vh;\n  }\n\n  .w-lightbox-image {\n    max-width: 96vw;\n    max-height: 96vh;\n  }\n\n  .w-lightbox-group .w-lightbox-image {\n    max-width: 82.3vw;\n    max-height: 84vh;\n  }\n\n  .w-lightbox-left, .w-lightbox-right {\n    opacity: .5;\n    display: block;\n  }\n\n  .w-lightbox-close {\n    opacity: .8;\n  }\n\n  .w-lightbox-control:hover {\n    opacity: 1;\n  }\n}"
   ],
   "w-lightbox-right": [
     ".w-lightbox-right {\nbackground-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii00IDAgMjQgNDAiIHdpZHRoPSIyNCIgaGVpZ2h0PSI0MCI+PGcgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cGF0aCBkPSJtMC0waDI4djI4aC01di0yM2gtMjN6IiBvcGFjaXR5PSIuNCIvPjxwYXRoIGQ9Im0xIDFoMjZ2MjZoLTN2LTIzaC0yM3oiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+\");\n  display: none;\n  bottom: 0;\n  right: 0;\n}",
-    ".w-lightbox-left, .w-lightbox-right {\nopacity: .5;\n    display: block;\n}"
+    ".w-lightbox-left, .w-lightbox-right {\nopacity: .5;\n    display: block;\n}",
+    "@media (min-width: 768px) {\n  .w-lightbox-content {\n    height: 96vh;\n    margin-top: 2vh;\n  }\n\n  .w-lightbox-view, .w-lightbox-view:before {\n    height: 96vh;\n  }\n\n  .w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {\n    height: 84vh;\n  }\n\n  .w-lightbox-image {\n    max-width: 96vw;\n    max-height: 96vh;\n  }\n\n  .w-lightbox-group .w-lightbox-image {\n    max-width: 82.3vw;\n    max-height: 84vh;\n  }\n\n  .w-lightbox-left, .w-lightbox-right {\n    opacity: .5;\n    display: block;\n  }\n\n  .w-lightbox-close {\n    opacity: .8;\n  }\n\n  .w-lightbox-control:hover {\n    opacity: 1;\n  }\n}"
   ],
   "w-lightbox-close": [
     ".w-lightbox-close {\nbackground-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii00IDAgMTggMTciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxNyI+PGcgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cGF0aCBkPSJtMCAwaDd2LTdoNXY3aDd2NWgtN3Y3aC01di03aC03eiIgb3BhY2l0eT0iLjQiLz48cGF0aCBkPSJtMSAxaDd2LTdoM3Y3aDd2M2gtN3Y3aC0zdi03aC03eiIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4=\");\n  background-size: 18px;\n  height: 2.6em;\n  right: 0;\n}",
-    ".w-lightbox-close {\nopacity: .8;\n}"
+    ".w-lightbox-close {\nopacity: .8;\n}",
+    "@media (min-width: 768px) {\n  .w-lightbox-content {\n    height: 96vh;\n    margin-top: 2vh;\n  }\n\n  .w-lightbox-view, .w-lightbox-view:before {\n    height: 96vh;\n  }\n\n  .w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {\n    height: 84vh;\n  }\n\n  .w-lightbox-image {\n    max-width: 96vw;\n    max-height: 96vh;\n  }\n\n  .w-lightbox-group .w-lightbox-image {\n    max-width: 82.3vw;\n    max-height: 84vh;\n  }\n\n  .w-lightbox-left, .w-lightbox-right {\n    opacity: .5;\n    display: block;\n  }\n\n  .w-lightbox-close {\n    opacity: .8;\n  }\n\n  .w-lightbox-control:hover {\n    opacity: 1;\n  }\n}"
   ],
   "w-lightbox-strip": [
     ".w-lightbox-strip {\nwhite-space: nowrap;\n  padding: 0 1vh;\n  line-height: 0;\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  overflow: auto hidden;\n}"
@@ -839,7 +905,11 @@
     ".w-nav[data-collapse=\"medium\"] .w-nav-button {\ndisplay: block;\n}",
     ".w-nav[data-collapse=\"small\"] .w-nav-button {\ndisplay: block;\n}",
     ".w-nav-brand {\npadding-left: 10px;\n}",
-    ".w-nav[data-collapse=\"tiny\"] .w-nav-button {\ndisplay: block;\n}"
+    ".w-nav[data-collapse=\"tiny\"] .w-nav-button {\ndisplay: block;\n}",
+    "@media screen and (max-width: 767px) {\n  .w-nav-brand {\n    padding-left: 10px;\n  }\n}",
+    "@media screen and (max-width: 991px) {\n  .w-nav[data-collapse=\"medium\"] .w-nav-menu {\n    display: none;\n  }\n\n  .w-nav[data-collapse=\"medium\"] .w-nav-button {\n    display: block;\n  }\n}",
+    "@media screen and (max-width: 767px) {\n  .w-nav[data-collapse=\"small\"] .w-nav-menu {\n    display: none;\n  }\n\n  .w-nav[data-collapse=\"small\"] .w-nav-button {\n    display: block;\n  }\n\n  .w-nav-brand {\n    padding-left: 10px;\n  }\n}",
+    "@media screen and (max-width: 479px) {\n  .w-nav[data-collapse=\"tiny\"] .w-nav-menu {\n    display: none;\n  }\n\n  .w-nav[data-collapse=\"tiny\"] .w-nav-button {\n    display: block;\n  }\n}"
   ],
   "w-nav-link": [
     ".w-nav-link {\nvertical-align: top;\n  color: #222;\n  text-align: left;\n  margin-left: auto;\n  margin-right: auto;\n  padding: 20px;\n  text-decoration: none;\n  display: inline-block;\n  position: relative;\n}",
@@ -847,7 +917,10 @@
   ],
   "w-nav-menu": [
     ".w-nav-menu {\nfloat: right;\n  position: relative;\n}",
-    ".w-nav[data-collapse=\"all\"] .w-nav-menu {\ndisplay: none;\n}"
+    ".w-nav[data-collapse=\"all\"] .w-nav-menu {\ndisplay: none;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-nav[data-collapse=\"medium\"] .w-nav-menu {\n    display: none;\n  }\n\n  .w-nav[data-collapse=\"medium\"] .w-nav-button {\n    display: block;\n  }\n}",
+    "@media screen and (max-width: 767px) {\n  .w-nav[data-collapse=\"small\"] .w-nav-menu {\n    display: none;\n  }\n\n  .w-nav[data-collapse=\"small\"] .w-nav-button {\n    display: block;\n  }\n\n  .w-nav-brand {\n    padding-left: 10px;\n  }\n}",
+    "@media screen and (max-width: 479px) {\n  .w-nav[data-collapse=\"tiny\"] .w-nav-menu {\n    display: none;\n  }\n\n  .w-nav[data-collapse=\"tiny\"] .w-nav-button {\n    display: block;\n  }\n}"
   ],
   "w--nav-link-open": [
     ".w--nav-link-open {\ndisplay: block;\n  position: relative;\n}"
@@ -867,7 +940,10 @@
     ".w-nav[data-collapse=\"all\"] .w-nav-button, .w--nav-dropdown-open, .w--nav-dropdown-toggle-open {\ndisplay: block;\n}",
     ".w-nav[data-collapse=\"medium\"] .w-nav-button {\ndisplay: block;\n}",
     ".w-nav[data-collapse=\"small\"] .w-nav-button {\ndisplay: block;\n}",
-    ".w-nav[data-collapse=\"tiny\"] .w-nav-button {\ndisplay: block;\n}"
+    ".w-nav[data-collapse=\"tiny\"] .w-nav-button {\ndisplay: block;\n}",
+    "@media screen and (max-width: 991px) {\n  .w-nav[data-collapse=\"medium\"] .w-nav-menu {\n    display: none;\n  }\n\n  .w-nav[data-collapse=\"medium\"] .w-nav-button {\n    display: block;\n  }\n}",
+    "@media screen and (max-width: 767px) {\n  .w-nav[data-collapse=\"small\"] .w-nav-menu {\n    display: none;\n  }\n\n  .w-nav[data-collapse=\"small\"] .w-nav-button {\n    display: block;\n  }\n\n  .w-nav-brand {\n    padding-left: 10px;\n  }\n}",
+    "@media screen and (max-width: 479px) {\n  .w-nav[data-collapse=\"tiny\"] .w-nav-menu {\n    display: none;\n  }\n\n  .w-nav[data-collapse=\"tiny\"] .w-nav-button {\n    display: block;\n  }\n}"
   ],
   "w--nav-dropdown-toggle-open": [
     ".w-nav[data-collapse=\"all\"] .w-nav-button, .w--nav-dropdown-open, .w--nav-dropdown-toggle-open {\ndisplay: block;\n}"
@@ -886,7 +962,8 @@
   "w-tab-link": [
     ".w-tab-link {\nvertical-align: top;\n  text-align: left;\n  cursor: pointer;\n  color: #222;\n  background-color: #ddd;\n  padding: 9px 30px;\n  text-decoration: none;\n  display: inline-block;\n  position: relative;\n}",
     ".w-tab-link.w--current {\nbackground-color: #c8c8c8;\n}",
-    ".w-tab-link:focus {\noutline: 0;\n}"
+    ".w-tab-link:focus {\noutline: 0;\n}",
+    "@media screen and (max-width: 479px) {\n  .w-tab-link {\n    display: block;\n  }\n}"
   ],
   "w-tab-content": [
     ".w-tab-content {\ndisplay: block;\n  position: relative;\n  overflow: hidden;\n}"
@@ -937,7 +1014,8 @@
     ".hubspot-checkbox {\nmargin-right: 1rem;\n}"
   ],
   "table_component": [
-    ".table_component {\nborder-collapse: separate;\n  border-spacing: .75rem 0;\n  width: 100%;\n  margin-bottom: 2rem;\n  margin-left: -.75rem;\n  font-size: 1rem;\n}"
+    ".table_component {\nborder-collapse: separate;\n  border-spacing: .75rem 0;\n  width: 100%;\n  margin-bottom: 2rem;\n  margin-left: -.75rem;\n  font-size: 1rem;\n}",
+    "@media screen and (max-width: 479px) {\n  .table_component {\n    margin-bottom: 2rem;\n  }\n\n  .table_cell.first-in-col {\n    max-width: 10rem;\n  }\n\n  .table_caption {\n    max-width: 18rem;\n  }\n}"
   ],
   "75rem": [],
   "second-col": [
@@ -948,7 +1026,9 @@
     ".table_cell.first-in-col {\nz-index: 3;\n  text-align: left;\n  background-color: #fff;\n  min-width: 14rem;\n  font-weight: 400;\n  position: sticky;\n  left: 0;\n}",
     ".table_cell.first-in-col.white {\nbackground-color: #fff;\n}",
     ".table_cell.in-last-row-thin {\nborder-top: 1px #000;\n  border-bottom-style: none;\n  font-weight: 400;\n}",
-    ".table_cell.first-in-col {\nmax-width: 10rem;\n}"
+    ".table_cell.first-in-col {\nmax-width: 10rem;\n}",
+    "@media screen and (max-width: 767px) {\n  .table_cell.first-in-col {\n    min-width: 8rem;\n    max-width: 8rem;\n  }\n\n  .konzernspiegel-wrapper {\n    margin-bottom: 3rem;\n  }\n}",
+    "@media screen and (max-width: 479px) {\n  .table_component {\n    margin-bottom: 2rem;\n  }\n\n  .table_cell.first-in-col {\n    max-width: 10rem;\n  }\n\n  .table_caption {\n    max-width: 18rem;\n  }\n}"
   ],
   "white": [
     ".table_cell.first-in-col.white {\nbackground-color: #fff;\n}"
@@ -956,7 +1036,8 @@
   "konzernspiegel-wrapper": [
     ".konzernspiegel-wrapper {\ncursor: grab;\n  width: 100%;\n  margin-bottom: 4rem;\n  position: relative;\n  overflow: auto hidden;\n}",
     ".konzernspiegel-wrapper:active {\ncursor: grabbing;\n}",
-    ".konzernspiegel-wrapper {\nmargin-bottom: 3rem;\n}"
+    ".konzernspiegel-wrapper {\nmargin-bottom: 3rem;\n}",
+    "@media screen and (max-width: 767px) {\n  .table_cell.first-in-col {\n    min-width: 8rem;\n    max-width: 8rem;\n  }\n\n  .konzernspiegel-wrapper {\n    margin-bottom: 3rem;\n  }\n}"
   ],
   "table_row": [
     ".table_row {\ngrid-column-gap: 16px;\n  grid-row-gap: 16px;\n  grid-template-rows: auto auto;\n  grid-template-columns: 1fr 1fr;\n  grid-auto-columns: 1fr;\n}"
@@ -971,7 +1052,8 @@
   ],
   "table_caption": [
     ".table_caption {\ntext-align: left;\n  width: auto;\n  max-width: 40rem;\n  margin-bottom: 1rem;\n  font-size: 1.5rem;\n  font-weight: 300;\n  position: sticky;\n  left: 0;\n}",
-    ".table_caption {\nmax-width: 18rem;\n}"
+    ".table_caption {\nmax-width: 18rem;\n}",
+    "@media screen and (max-width: 479px) {\n  .table_component {\n    margin-bottom: 2rem;\n  }\n\n  .table_cell.first-in-col {\n    max-width: 10rem;\n  }\n\n  .table_caption {\n    max-width: 18rem;\n  }\n}"
   ],
   "table_head": [
     ".table_header {\nborder-bottom: 1px solid #0006;\n  flex: 1;\n  min-width: 2.9rem;\n  padding: .5rem;\n  font-weight: 600;\n}",
@@ -985,12 +1067,14 @@
   "btn-primary": [
     ".btn-primary {\nbackground-color: #ff0004;\n  padding: 47px;\n  font-family: Varela Round, sans-serif;\n  font-weight: 400;\n}",
     ".btn-primary:hover {\nbackground-color: #ffcdcd;\n}",
-    ".btn-primary:focus {\nbackground-color: #610506;\n  border: 4px solid #000;\n}"
+    ".btn-primary:focus {\nbackground-color: #610506;\n  border: 4px solid #000;\n}",
+    "@media screen and (max-width: 991px) {\n  .btn-primary {\n    padding-left: 103px;\n    padding-right: 103px;\n  }\n\n  .btn-secondary {\n    padding-left: 145px;\n    padding-right: 145px;\n  }\n}"
   ],
   "btn-secondary": [
     ".btn-secondary {\nbackground-color: #001eff;\n  padding: 97px 47px;\n  font-family: Varela Round, sans-serif;\n  font-weight: 400;\n}",
     ".btn-secondary:hover {\nbackground-color: #a3aeff;\n}",
-    ".btn-secondary {\npadding-left: 145px;\n    padding-right: 145px;\n}"
+    ".btn-secondary {\npadding-left: 145px;\n    padding-right: 145px;\n}",
+    "@media screen and (max-width: 991px) {\n  .btn-primary {\n    padding-left: 103px;\n    padding-right: 103px;\n  }\n\n  .btn-secondary {\n    padding-left: 145px;\n    padding-right: 145px;\n  }\n}"
   ],
   "code-embed": [
     ".code-embed {\nmax-width: 800px;\n  margin-left: auto;\n  margin-right: auto;\n  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;\n  position: relative;\n}"
