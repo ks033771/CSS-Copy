@@ -2238,6 +2238,12 @@ textarea.w-input, textarea.w-select {
   position: relative;
 }
 
+.heading {
+  margin-top: 34px;
+  margin-bottom: 34px;
+  font-size: 4rem;
+}
+
 @media screen and (max-width: 991px) {
   .btn-primary {
     padding-left: 103px;
