@@ -1,16 +1,6 @@
-// sync.js
-// Holt die veröffentlichte Webflow-Seite,
-// liest daraus automatisch die aktuelle Webflow-CSS-URL,
-// lädt das CSS, extrahiert definierte Komponenten-Klassen
-// und schreibt components.json + latest.css
-
 const fs = require("fs");
 
-const PAGE_URL = process.env.PAGE_URL; // 👉 deine Webflow Seiten-URL
-const COMPONENT_CLASSES = (process.env.COMPONENT_CLASSES || "")
-  .split(",")
-  .map(s => s.trim())
-  .filter(Boolean);
+const PAGE_URL = process.env.PAGE_URL;
 
 if (!PAGE_URL) {
   console.error("Missing PAGE_URL env var.");
@@ -19,35 +9,37 @@ if (!PAGE_URL) {
 
 async function fetchText(url) {
   const res = await fetch(url, { cache: "no-store" });
-  if (!res.ok) throw new Error(`Fetch failed: ${res.status} ${res.statusText}`);
+  if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
   return await res.text();
 }
 
-// 🔍 Findet die aktuelle Webflow CSS Datei im HTML
+// 🔍 CSS URL aus Webflow HTML holen
 function findWebflowCSSUrl(html) {
   const links = [...html.matchAll(/<link[^>]+href="([^"]+\.css)"/g)]
     .map(m => m[1]);
 
-  const wfCss = links.find(url =>
-    url.includes("webflow") &&
-    url.includes(".css")
-  );
-
-  if (!wfCss) {
-    console.log("Found CSS links:", links);
-    throw new Error("Webflow CSS link not found");
-  }
-
+  const wfCss = links.find(url => url.includes("webflow"));
+  if (!wfCss) throw new Error("Webflow CSS link not found");
   return wfCss;
 }
 
+// 🧠 Klassen aus markierten Elementen lesen
+function extractComponentClasses(html) {
+  const matches = [...html.matchAll(/css-dok="true"[^>]*class="([^"]+)"/g)];
+  const classes = new Set();
 
-// 🔧 CSS-Regeln für gewünschte Klassen extrahieren
+  matches.forEach(m => {
+    m[1].split(/\s+/).forEach(c => classes.add(c));
+  });
+
+  return [...classes];
+}
+
+// 🎨 CSS Regeln extrahieren
 function extractRelevantCSS(cssText, classes) {
   const components = {};
   classes.forEach(c => (components[c] = []));
 
-  // 1️⃣ Normale Regeln
   const ruleRegex = /([^{@}][^{]*?)\{([^}]*)\}/g;
   let m;
 
@@ -63,21 +55,7 @@ function extractRelevantCSS(cssText, classes) {
     }
   }
 
-  // 2️⃣ Media Queries
-  const mediaRegex = /@media[^{]+\{([\s\S]+?\})\s*\}/g;
-  let mediaMatch;
-
-  while ((mediaMatch = mediaRegex.exec(cssText)) !== null) {
-    const mediaBlock = mediaMatch[0];
-
-    for (const c of classes) {
-      if (mediaBlock.includes("." + c)) {
-        components[c].push(mediaBlock.trim());
-      }
-    }
-  }
-
-  return { components };
+  return components;
 }
 
 (async () => {
@@ -85,21 +63,19 @@ function extractRelevantCSS(cssText, classes) {
     console.log("🌍 Fetching page:", PAGE_URL);
     const html = await fetchText(PAGE_URL);
 
-    console.log("🔎 Finding Webflow CSS URL...");
     const cssUrl = findWebflowCSSUrl(html);
     console.log("🎨 CSS URL:", cssUrl);
 
     const css = await fetchText(cssUrl);
-
-    // Snapshot der kompletten CSS-Datei
     fs.writeFileSync("latest.css", css, "utf8");
 
-    // Komponenten extrahieren
-    const { components } = extractRelevantCSS(css, COMPONENT_CLASSES);
+    const classes = extractComponentClasses(html);
+    console.log("📦 Components found:", classes);
+
+    const components = extractRelevantCSS(css, classes);
     fs.writeFileSync("components.json", JSON.stringify(components, null, 2), "utf8");
 
-    console.log("✔ Updated latest.css and components.json");
-    console.log("✔ Classes:", COMPONENT_CLASSES.join(", ") || "(none)");
+    console.log("✔ Updated components.json");
 
   } catch (err) {
     console.error("❌ Sync failed:", err.message);
