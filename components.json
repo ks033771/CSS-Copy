@@ -1085,7 +1085,7 @@
     ".heading-mega {\nfont-feature-settings: \"liga\" off, \"clig\" off;\n  margin-top: 34px;\n  margin-bottom: 34px;\n  font-size: 3.375rem;\n  font-style: normal;\n  font-weight: 300;\n  line-height: 1.25;\n}"
   ],
   "div-block": [
-    ".div-block {\ngrid-column-gap: 2rem;\n  grid-row-gap: 2rem;\n  display: flex;\n}"
+    ".div-block {\ngrid-column-gap: 1rem;\n  grid-row-gap: 1rem;\n  display: flex;\n}"
   ],
   "container": [
     ".container {\nmax-width: 900px;\n  margin-bottom: 4rem;\n  margin-left: auto;\n  margin-right: auto;\n}"

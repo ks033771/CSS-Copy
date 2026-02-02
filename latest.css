@@ -2277,8 +2277,8 @@ p {
 }
 
 .div-block {
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
   display: flex;
 }
 
