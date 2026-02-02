@@ -25,15 +25,27 @@ function findWebflowCSSUrl(html) {
 
 // 🧠 Klassen aus markierten Elementen lesen
 function extractComponentClasses(html) {
-  const matches = [...html.matchAll(/css-dok="true"[^>]*class="([^"]+)"/g)];
+  const elements = [...html.matchAll(/<[^>]+>/g)];
   const classes = new Set();
 
-  matches.forEach(m => {
-    m[1].split(/\s+/).forEach(c => classes.add(c));
+  elements.forEach(el => {
+    const tag = el[0];
+
+    if (tag.includes('css-dok="true"')) {
+      const classMatch = tag.match(/class="([^"]+)"/);
+      if (classMatch) {
+        classMatch[1].split(/\s+/).forEach(c => {
+          if (!c.startsWith("w-")) {  // 🚫 Webflow system classes ignorieren
+            classes.add(c);
+          }
+        });
+      }
+    }
   });
 
   return [...classes];
 }
+
 
 // 🎨 CSS Regeln extrahieren
 function extractRelevantCSS(cssText, classes) {
