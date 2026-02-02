@@ -11,6 +11,7 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -20,7 +21,7 @@ jobs:
 
       - name: Run sync
         env:
-          CSS_URL: ${{ vars.CSS_URL }}
+          PAGE_URL: ${{ vars.PAGE_URL }}
           COMPONENT_CLASSES: ${{ vars.COMPONENT_CLASSES }}
         run: |
           node sync.js
@@ -29,6 +30,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add components.json latest.css
+          git add latest.css components.json
           git commit -m "Update CSS snapshot" || echo "No changes"
           git push
