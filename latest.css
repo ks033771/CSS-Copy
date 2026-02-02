@@ -2210,6 +2210,10 @@ textarea.w-input, textarea.w-select {
   font-weight: 400;
 }
 
+.btn-primary:hover {
+  background-color: #ffcdcd;
+}
+
 .btn-secondary {
   background-color: #001eff;
   padding: 97px 47px;

@@ -1,6 +1,7 @@
 {
   "btn-primary": [
-    ".btn-primary {\nbackground-color: #ff0004;\n  padding: 47px;\n  font-family: Varela Round, sans-serif;\n  font-weight: 400;\n}"
+    ".btn-primary {\nbackground-color: #ff0004;\n  padding: 47px;\n  font-family: Varela Round, sans-serif;\n  font-weight: 400;\n}",
+    ".btn-primary:hover {\nbackground-color: #ffcdcd;\n}"
   ],
   "btn-secondary": [
     ".btn-secondary {\nbackground-color: #001eff;\n  padding: 97px 47px;\n  font-family: Varela Round, sans-serif;\n  font-weight: 400;\n}"
