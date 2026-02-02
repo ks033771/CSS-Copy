@@ -25,10 +25,22 @@ async function fetchText(url) {
 
 // 🔍 Findet die aktuelle Webflow CSS Datei im HTML
 function findWebflowCSSUrl(html) {
-  const match = html.match(/https:\/\/cdn\.prod\.website-files\.com[^"]+\.css/);
-  if (!match) throw new Error("Webflow CSS link not found in page HTML");
-  return match[0];
+  const links = [...html.matchAll(/<link[^>]+href="([^"]+\.css)"/g)]
+    .map(m => m[1]);
+
+  const wfCss = links.find(url =>
+    url.includes("webflow") &&
+    url.includes(".css")
+  );
+
+  if (!wfCss) {
+    console.log("Found CSS links:", links);
+    throw new Error("Webflow CSS link not found");
+  }
+
+  return wfCss;
 }
+
 
 // 🔧 CSS-Regeln für gewünschte Klassen extrahieren
 function extractRelevantCSS(cssText, classes) {
