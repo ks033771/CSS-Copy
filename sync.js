@@ -44,11 +44,10 @@ function findWebflowCSSUrl(html) {
 
 // 🔧 CSS-Regeln für gewünschte Klassen extrahieren
 function extractRelevantCSS(cssText, classes) {
-  if (!classes.length) return { components: {} };
-
   const components = {};
   classes.forEach(c => (components[c] = []));
 
+  // 1️⃣ Normale Regeln
   const ruleRegex = /([^{@}][^{]*?)\{([^}]*)\}/g;
   let m;
 
@@ -58,9 +57,22 @@ function extractRelevantCSS(cssText, classes) {
     if (!selector || !body) continue;
 
     for (const c of classes) {
-      // Robuster Match (auch .btn-primary.w-button etc.)
       if (selector.includes("." + c)) {
         components[c].push(`${selector} {\n${body}\n}`);
+      }
+    }
+  }
+
+  // 2️⃣ Media Queries
+  const mediaRegex = /@media[^{]+\{([\s\S]+?\})\s*\}/g;
+  let mediaMatch;
+
+  while ((mediaMatch = mediaRegex.exec(cssText)) !== null) {
+    const mediaBlock = mediaMatch[0];
+
+    for (const c of classes) {
+      if (mediaBlock.includes("." + c)) {
+        components[c].push(mediaBlock.trim());
       }
     }
   }
