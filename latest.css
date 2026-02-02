@@ -2230,6 +2230,13 @@ textarea.w-input, textarea.w-select {
   background-color: #a3aeff;
 }
 
+.code-embed {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
 @media screen and (max-width: 767px) {
   .table_cell.first-in-col {
     min-width: 8rem;
