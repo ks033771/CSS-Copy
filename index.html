@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Styleguide Dev CSS</title>
+  <style>
+    body{font-family:system-ui;margin:0;padding:24px;background:#0d0f14;color:#fff}
+    .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    select,button{background:#2a2d36;color:#fff;border:0;border-radius:10px;padding:10px 12px;font-weight:600}
+    pre{background:#1e1f26;border-radius:14px;padding:16px;overflow:auto;box-shadow:0 0 0 1px rgba(255,255,255,.06)}
+    code{white-space:pre;font-family:ui-monospace,Menlo,Monaco,Consolas,monospace;line-height:1.6}
+    a{color:#9aa4ff}
+  </style>
+</head>
+<body>
+  <h1>Dev-CSS (auto-synced)</h1>
+
+  <div class="row">
+    <label for="cls">Komponente:</label>
+    <select id="cls"></select>
+    <button id="copy">Copy</button>
+    <a href="./latest.css" target="_blank" rel="noopener">latest.css öffnen</a>
+  </div>
+
+  <pre><code id="out">Lade…</code></pre>
+
+  <script>
+    const sel = document.getElementById("cls");
+    const out = document.getElementById("out");
+    const copy = document.getElementById("copy");
+    let data = {};
+
+    async function load() {
+      const res = await fetch("./components.json", { cache: "no-store" });
+      data = await res.json();
+
+      const keys = Object.keys(data);
+      sel.innerHTML = keys.map(k => `<option value="${k}">${k}</option>`).join("");
+
+      if (!keys.length) {
+        out.textContent = "components.json ist leer.\nTrage Klassen in COMPONENT_CLASSES ein (Repo Settings → Secrets/Variables).";
+        return;
+      }
+
+      render(keys[0]);
+    }
+
+    function render(key) {
+      const rules = data[key] || [];
+      out.textContent = rules.length ? rules.join("\n\n") : "Keine Regeln gefunden.";
+    }
+
+    sel.addEventListener("change", () => render(sel.value));
+
+    copy.addEventListener("click", async () => {
+      await navigator.clipboard.writeText(out.textContent);
+      copy.textContent = "Copied!";
+      setTimeout(() => copy.textContent = "Copy", 1000);
+    });
+
+    load();
+  </script>
+</body>
+</html>
