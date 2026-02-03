@@ -3,7 +3,7 @@ name: Sync Webflow CSS
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/30 * * * *"   # alle 30 Minuten
+    - cron: "59 7 * * 1"   
 
 permissions:
   contents: write
