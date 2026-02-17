@@ -14,7 +14,7 @@ async function fetchText(url) {
 }
 
 /* --------------------------------------------------
-   1️⃣ CSS URL finden
+   1️⃣ Webflow CSS URL finden
 -------------------------------------------------- */
 function findWebflowCSSUrl(html) {
   const matches = [...html.matchAll(/<link[^>]+href="([^"]+\.css)"/g)]
@@ -52,28 +52,45 @@ function extractCSSVariables(cssText) {
 }
 
 /* --------------------------------------------------
-   3️⃣ Selektoren sammeln (Klassen + Tags)
+   3️⃣ Selektoren sammeln (Klassen + Tags getrennt)
 -------------------------------------------------- */
-function extractAllSelectors(cssText) {
+function extractSelectors(cssText) {
 
-  const classMatches = [...cssText.matchAll(/\.([a-zA-Z0-9_-]+)[\s\.\:\{]/g)]
-    .map(m => m[1]);
+  const classSelectors = [...new Set(
+    [...cssText.matchAll(/\.([a-zA-Z0-9_-]+)(?![\w-])/g)]
+      .map(m => m[1])
+  )];
 
-  const tagMatches = [...cssText.matchAll(/(^|\s|\}|,)(h[1-6]|p|input|textarea|button|a|ul|ol|li|div|span)\s*\{/gi)]
-    .map(m => m[2].toLowerCase());
+  const tagWhitelist = new Set([
+    "h1","h2","h3","h4","h5","h6",
+    "p","a","button","input","textarea",
+    "select","label","ul","ol","li"
+  ]);
 
-  return [...new Set([...classMatches, ...tagMatches])];
+  const tagSelectors = [...new Set(
+    [...cssText.matchAll(/(^|[}\s,])([a-z][a-z0-9-]*)\s*\{/gi)]
+      .map(m => m[2].toLowerCase())
+      .filter(t => tagWhitelist.has(t))
+  )];
+
+  return { classSelectors, tagSelectors };
 }
 
 /* --------------------------------------------------
-   4️⃣ CSS Regeln extrahieren + Media sauber splitten
+   4️⃣ CSS Regeln extrahieren (inkl. Media Split)
 -------------------------------------------------- */
-function extractRelevantCSS(cssText, selectors) {
+function extractRelevantCSS(cssText, classSelectors, tagSelectors) {
 
   const components = {};
-  selectors.forEach(s => (components[s] = []));
+  [...classSelectors, ...tagSelectors].forEach(s => (components[s] = []));
 
-  // Normale Regeln
+  const classHit = (selector, cls) =>
+    new RegExp(`\\.${cls}(?![\\w-])`).test(selector);
+
+  const tagHit = (selector, tag) =>
+    new RegExp(`(^|\\s|,)${tag}(\\s|\\{|:|\\.|#|\\[)`).test(selector);
+
+  /* ---- Normale Regeln ---- */
   const ruleRegex = /([^{@}][^{]*?)\{([^}]*)\}/g;
   let m;
 
@@ -82,52 +99,66 @@ function extractRelevantCSS(cssText, selectors) {
     const body = m[2].trim();
     if (!selector || !body) continue;
 
-    selectors.forEach(s => {
-      const isClass = selector.includes("." + s);
-      const isTag = selector.match(new RegExp(`(^|\\s|,)${s}(\\s|\\{|:)`));
-
-      if (isClass || isTag) {
-        components[s].push(`${selector} {\n${body}\n}`);
+    for (const cls of classSelectors) {
+      if (classHit(selector, cls)) {
+        components[cls].push(`${selector} {\n${body}\n}`);
       }
-    });
+    }
+
+    for (const tag of tagSelectors) {
+      if (tagHit(selector, tag)) {
+        components[tag].push(`${selector} {\n${body}\n}`);
+      }
+    }
   }
 
-  // Media Queries sauber zerlegen
-  const mediaRegex = /@media[^{]+\{([\s\S]+?)\}\s*\}/g;
-  let mediaMatch;
+  /* ---- Media Queries sauber splitten ---- */
+  const mediaOuter = /@media[^{]+\{([\s\S]+?)\}\s*\}/g;
+  let mm;
 
-  while ((mediaMatch = mediaRegex.exec(cssText)) !== null) {
-    const condition = mediaMatch[0].match(/@media[^{]+/)[0];
-    const innerCSS = mediaMatch[1];
+  while ((mm = mediaOuter.exec(cssText)) !== null) {
+
+    const condition = mm[0].match(/@media[^{]+/)[0];
+    const innerCSS = mm[1];
 
     const innerRules = [...innerCSS.matchAll(/([^{]+)\{([^}]+)\}/g)];
 
-    innerRules.forEach(rule => {
-      const selector = rule[1].trim();
-      const body = rule[2].trim();
+    for (const r of innerRules) {
 
-      selectors.forEach(s => {
-        const isClass = selector.includes("." + s);
-        const isTag = selector.match(new RegExp(`(^|\\s|,)${s}(\\s|\\{|:)`));
+      const sel = r[1].trim();
+      const body = r[2].trim();
 
-        if (isClass || isTag) {
-          components[s].push(
+      for (const cls of classSelectors) {
+        if (classHit(sel, cls)) {
+          components[cls].push(
 `${condition} {
-${selector} {
+${sel} {
 ${body}
 }
 }`
           );
         }
-      });
-    });
+      }
+
+      for (const tag of tagSelectors) {
+        if (tagHit(sel, tag)) {
+          components[tag].push(
+`${condition} {
+${sel} {
+${body}
+}
+}`
+          );
+        }
+      }
+    }
   }
 
   return components;
 }
 
 /* --------------------------------------------------
-   5️⃣ Variablen auflösen
+   5️⃣ CSS Variablen auflösen
 -------------------------------------------------- */
 function resolveVariables(components, variables) {
 
@@ -164,10 +195,11 @@ function resolveVariables(components, variables) {
     const variables = extractCSSVariables(css);
     console.log(`🎛 ${Object.keys(variables).length} CSS variables found`);
 
-    const selectors = extractAllSelectors(css);
-    console.log(`📦 ${selectors.length} selectors found`);
+    const { classSelectors, tagSelectors } = extractSelectors(css);
+    console.log(`📦 ${classSelectors.length} classes found`);
+    console.log(`📦 ${tagSelectors.length} tags found`);
 
-    let components = extractRelevantCSS(css, selectors);
+    let components = extractRelevantCSS(css, classSelectors, tagSelectors);
     components = resolveVariables(components, variables);
 
     fs.writeFileSync(
