@@ -1,4 +1,5 @@
 {
+  "1": [],
   "2": [],
   "3": [],
   "4": [],
@@ -993,15 +994,12 @@
   "margin-horizontal": [
     ".margin-horizontal {\nmargin-top: 0;\n  margin-bottom: 0;\n}",
     ".margin-horizontal {\nmargin-top: 0;\n    margin-bottom: 0;\n}",
-    ".margin-horizontal {\nmargin-top: 0;\n    margin-bottom: 0;\n}",
     "@media screen and (max-width: 991px)  {\n.margin-horizontal {\nmargin-top: 0;\n    margin-bottom: 0;\n}\n}",
     "@media screen and (max-width: 767px)  {\n.margin-horizontal {\nmargin-top: 0;\n    margin-bottom: 0;\n}\n}",
     "@media screen and (max-width: 479px)  {\n.margin-horizontal {\nmargin-top: 0;\n    margin-bottom: 0;\n}\n}"
   ],
   "padding-top": [
     ".padding-top, .padding-top.padding-medium {\npadding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n}",
-    ".padding-top {\npadding-bottom: 0;\n    padding-left: 0;\n    padding-right: 0;\n}",
-    ".padding-top {\npadding-bottom: 0;\n    padding-left: 0;\n    padding-right: 0;\n}",
     ".padding-top {\npadding-bottom: 0;\n    padding-left: 0;\n    padding-right: 0;\n}",
     "@media screen and (max-width: 991px)  {\n.padding-top {\npadding-bottom: 0;\n    padding-left: 0;\n    padding-right: 0;\n}\n}",
     "@media screen and (max-width: 767px)  {\n.padding-top {\npadding-bottom: 0;\n    padding-left: 0;\n    padding-right: 0;\n}\n}",
@@ -1010,16 +1008,12 @@
   "margin-vertical": [
     ".margin-vertical {\nmargin-left: 0;\n  margin-right: 0;\n}",
     ".margin-vertical {\nmargin-left: 0;\n    margin-right: 0;\n}",
-    ".margin-vertical {\nmargin-left: 0;\n    margin-right: 0;\n}",
-    ".margin-vertical {\nmargin-left: 0;\n    margin-right: 0;\n}",
     "@media screen and (max-width: 991px)  {\n.margin-vertical {\nmargin-left: 0;\n    margin-right: 0;\n}\n}",
     "@media screen and (max-width: 767px)  {\n.margin-vertical {\nmargin-left: 0;\n    margin-right: 0;\n}\n}",
     "@media screen and (max-width: 479px)  {\n.margin-vertical {\nmargin-left: 0;\n    margin-right: 0;\n}\n}"
   ],
   "margin-bottom": [
     ".margin-bottom, .margin-bottom.margin-small, .margin-bottom.margin-medium, .margin-bottom.margin-xsmall {\nmargin-top: 0;\n  margin-left: 0;\n  margin-right: 0;\n}",
-    ".margin-bottom {\nmargin-top: 0;\n    margin-left: 0;\n    margin-right: 0;\n}",
-    ".margin-bottom {\nmargin-top: 0;\n    margin-left: 0;\n    margin-right: 0;\n}",
     ".margin-bottom {\nmargin-top: 0;\n    margin-left: 0;\n    margin-right: 0;\n}",
     "@media screen and (max-width: 991px)  {\n.margin-bottom {\nmargin-top: 0;\n    margin-left: 0;\n    margin-right: 0;\n}\n}",
     "@media screen and (max-width: 767px)  {\n.margin-bottom {\nmargin-top: 0;\n    margin-left: 0;\n    margin-right: 0;\n}\n}",
@@ -1028,16 +1022,12 @@
   "padding-left": [
     ".padding-left {\npadding-top: 0;\n  padding-bottom: 0;\n  padding-right: 0;\n}",
     ".padding-left {\npadding-top: 0;\n    padding-bottom: 0;\n    padding-right: 0;\n}",
-    ".padding-left {\npadding-top: 0;\n    padding-bottom: 0;\n    padding-right: 0;\n}",
-    ".padding-left {\npadding-top: 0;\n    padding-bottom: 0;\n    padding-right: 0;\n}",
     "@media screen and (max-width: 991px)  {\n.padding-left {\npadding-top: 0;\n    padding-bottom: 0;\n    padding-right: 0;\n}\n}",
     "@media screen and (max-width: 767px)  {\n.padding-left {\npadding-top: 0;\n    padding-bottom: 0;\n    padding-right: 0;\n}\n}",
     "@media screen and (max-width: 479px)  {\n.padding-left {\npadding-top: 0;\n    padding-bottom: 0;\n    padding-right: 0;\n}\n}"
   ],
   "padding-vertical": [
     ".padding-vertical, .padding-vertical.padding-xxlarge {\npadding-left: 0;\n  padding-right: 0;\n}",
-    ".padding-vertical {\npadding-left: 0;\n    padding-right: 0;\n}",
-    ".padding-vertical {\npadding-left: 0;\n    padding-right: 0;\n}",
     ".padding-vertical {\npadding-left: 0;\n    padding-right: 0;\n}",
     "@media screen and (max-width: 991px)  {\n.padding-vertical {\npadding-left: 0;\n    padding-right: 0;\n}\n}",
     "@media screen and (max-width: 767px)  {\n.padding-vertical {\npadding-left: 0;\n    padding-right: 0;\n}\n}",
@@ -1055,16 +1045,12 @@
   "padding-horizontal": [
     ".padding-horizontal {\npadding-top: 0;\n  padding-bottom: 0;\n}",
     ".padding-horizontal {\npadding-top: 0;\n    padding-bottom: 0;\n}",
-    ".padding-horizontal {\npadding-top: 0;\n    padding-bottom: 0;\n}",
-    ".padding-horizontal {\npadding-top: 0;\n    padding-bottom: 0;\n}",
     "@media screen and (max-width: 991px)  {\n.padding-horizontal {\npadding-top: 0;\n    padding-bottom: 0;\n}\n}",
     "@media screen and (max-width: 767px)  {\n.padding-horizontal {\npadding-top: 0;\n    padding-bottom: 0;\n}\n}",
     "@media screen and (max-width: 479px)  {\n.padding-horizontal {\npadding-top: 0;\n    padding-bottom: 0;\n}\n}"
   ],
   "margin-right": [
     ".margin-right {\nmargin-top: 0;\n  margin-bottom: 0;\n  margin-left: 0;\n}",
-    ".margin-right {\nmargin-top: 0;\n    margin-bottom: 0;\n    margin-left: 0;\n}",
-    ".margin-right {\nmargin-top: 0;\n    margin-bottom: 0;\n    margin-left: 0;\n}",
     ".margin-right {\nmargin-top: 0;\n    margin-bottom: 0;\n    margin-left: 0;\n}",
     "@media screen and (max-width: 991px)  {\n.margin-right {\nmargin-top: 0;\n    margin-bottom: 0;\n    margin-left: 0;\n}\n}",
     "@media screen and (max-width: 767px)  {\n.margin-right {\nmargin-top: 0;\n    margin-bottom: 0;\n    margin-left: 0;\n}\n}",
@@ -1073,16 +1059,12 @@
   "margin-top": [
     ".margin-top, .margin-top.margin-medium {\nmargin-bottom: 0;\n  margin-left: 0;\n  margin-right: 0;\n}",
     ".margin-top {\nmargin-bottom: 0;\n    margin-left: 0;\n    margin-right: 0;\n}",
-    ".margin-top {\nmargin-bottom: 0;\n    margin-left: 0;\n    margin-right: 0;\n}",
-    ".margin-top {\nmargin-bottom: 0;\n    margin-left: 0;\n    margin-right: 0;\n}",
     "@media screen and (max-width: 991px)  {\n.margin-top {\nmargin-bottom: 0;\n    margin-left: 0;\n    margin-right: 0;\n}\n}",
     "@media screen and (max-width: 767px)  {\n.margin-top {\nmargin-bottom: 0;\n    margin-left: 0;\n    margin-right: 0;\n}\n}",
     "@media screen and (max-width: 479px)  {\n.margin-top {\nmargin-bottom: 0;\n    margin-left: 0;\n    margin-right: 0;\n}\n}"
   ],
   "margin-left": [
     ".margin-left {\nmargin-top: 0;\n  margin-bottom: 0;\n  margin-right: 0;\n}",
-    ".margin-left {\nmargin-top: 0;\n    margin-bottom: 0;\n    margin-right: 0;\n}",
-    ".margin-left {\nmargin-top: 0;\n    margin-bottom: 0;\n    margin-right: 0;\n}",
     ".margin-left {\nmargin-top: 0;\n    margin-bottom: 0;\n    margin-right: 0;\n}",
     "@media screen and (max-width: 991px)  {\n.margin-left {\nmargin-top: 0;\n    margin-bottom: 0;\n    margin-right: 0;\n}\n}",
     "@media screen and (max-width: 767px)  {\n.margin-left {\nmargin-top: 0;\n    margin-bottom: 0;\n    margin-right: 0;\n}\n}",
@@ -1091,16 +1073,12 @@
   "padding-right": [
     ".padding-right {\npadding-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n}",
     ".padding-right {\npadding-top: 0;\n    padding-bottom: 0;\n    padding-left: 0;\n}",
-    ".padding-right {\npadding-top: 0;\n    padding-bottom: 0;\n    padding-left: 0;\n}",
-    ".padding-right {\npadding-top: 0;\n    padding-bottom: 0;\n    padding-left: 0;\n}",
     "@media screen and (max-width: 991px)  {\n.padding-right {\npadding-top: 0;\n    padding-bottom: 0;\n    padding-left: 0;\n}\n}",
     "@media screen and (max-width: 767px)  {\n.padding-right {\npadding-top: 0;\n    padding-bottom: 0;\n    padding-left: 0;\n}\n}",
     "@media screen and (max-width: 479px)  {\n.padding-right {\npadding-top: 0;\n    padding-bottom: 0;\n    padding-left: 0;\n}\n}"
   ],
   "padding-bottom": [
     ".padding-bottom, .padding-bottom.padding-xxlarge {\npadding-top: 0;\n  padding-left: 0;\n  padding-right: 0;\n}",
-    ".padding-bottom {\npadding-top: 0;\n    padding-left: 0;\n    padding-right: 0;\n}",
-    ".padding-bottom {\npadding-top: 0;\n    padding-left: 0;\n    padding-right: 0;\n}",
     ".padding-bottom {\npadding-top: 0;\n    padding-left: 0;\n    padding-right: 0;\n}",
     "@media screen and (max-width: 991px)  {\n.padding-bottom {\npadding-top: 0;\n    padding-left: 0;\n    padding-right: 0;\n}\n}",
     "@media screen and (max-width: 767px)  {\n.padding-bottom {\npadding-top: 0;\n    padding-left: 0;\n    padding-right: 0;\n}\n}",
@@ -2008,7 +1986,8 @@
   "padding-section-hero": [
     ".padding-section-hero {\npadding-top: 4rem;\n  padding-bottom: 5rem;\n}",
     ".padding-section-hero {\npadding-top: 4rem;\n    padding-bottom: 4rem;\n}",
-    ".padding-section-hero {\npadding-top: 3rem;\n    padding-bottom: 3rem;\n}"
+    ".padding-section-hero {\npadding-top: 3rem;\n    padding-bottom: 3rem;\n}",
+    "@media screen and (max-width: 767px)  {\n.padding-section-hero {\npadding-top: 3rem;\n    padding-bottom: 3rem;\n}\n}"
   ],
   "vertical-align-center": [
     ".vertical-align-center {\ngrid-column-gap: .5rem;\n  grid-row-gap: .5rem;\n  justify-content: flex-start;\n  align-items: center;\n  height: 100%;\n  display: flex;\n}"
@@ -2086,6 +2065,13 @@
   ],
   "text-style-paragraph-small": [
     ".text-style-paragraph-small {\nfont-size: 1rem;\n}"
+  ],
+  "section-hero-start": [
+    ".section-hero-start {\nz-index: 3;\n  background-color: #36362f;\n  color: var(--_canada-life-colors---greys-and-neutrals--cl-white);\n  position: relative;\n}"
+  ],
+  "heading-style-giant": [
+    ".heading-style-giant {\nmargin-bottom: 1.5rem;\n  font-family: foco, sans-serif;\n  font-size: clamp(4rem, 10vw, 6rem);\n  font-weight: 300;\n  line-height: 1.1;\n}",
+    ".heading-style-giant {\nfont-size: 2.5rem;\n}"
   ],
   "hide-tablet": [
     ".hide-tablet {\ndisplay: none;\n}",

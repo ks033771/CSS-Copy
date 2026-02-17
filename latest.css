@@ -4409,6 +4409,21 @@ figcaption {
   font-size: var(--_canada-life-typography---typography--small-paragraph);
 }
 
+.section-hero-start {
+  z-index: 3;
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-black);
+  color: var(--white);
+  position: relative;
+}
+
+.heading-style-giant {
+  margin-bottom: 1.5rem;
+  font-family: foco, sans-serif;
+  font-size: clamp(4rem, 10vw, 6rem);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
 @media screen and (max-width: 991px) {
   .padding-xlarge {
     padding: 3rem;
@@ -5083,6 +5098,10 @@ figcaption {
   .padding-section-hero {
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+
+  .heading-style-giant {
+    font-size: 2.5rem;
   }
 }
 
