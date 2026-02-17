@@ -15,14 +15,29 @@ async function fetchText(url) {
 
 // 🔍 Webflow CSS URL aus veröffentlichter Seite holen
 function findWebflowCSSUrl(html) {
-  const links = [...html.matchAll(/<link[^>]+href="([^"]+\.css)"/g)]
+  const matches = [...html.matchAll(/<link[^>]+href="([^"]+\.css)"/g)]
     .map(m => m[1]);
 
-  const wfCss = links.find(url => url.includes("webflow"));
-  if (!wfCss) throw new Error("Webflow CSS link not found");
+  if (!matches.length) {
+    throw new Error("No CSS links found in page");
+  }
 
-  return wfCss;
+  // Entferne bekannte externe CSS wie Google Fonts
+  const filtered = matches.filter(url =>
+    !url.includes("google") &&
+    !url.includes("gstatic")
+  );
+
+  if (!filtered.length) {
+    throw new Error("No suitable CSS file found");
+  }
+
+  // Nimm die längste URL (meist Webflow Main CSS)
+  const sorted = filtered.sort((a, b) => b.length - a.length);
+
+  return sorted[0];
 }
+
 
 // 🧠 Alle Klassen aus CSS sammeln
 function extractAllClassesFromCSS(cssText) {
