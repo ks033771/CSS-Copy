@@ -52,43 +52,25 @@ function extractCSSVariables(cssText) {
 }
 
 /* --------------------------------------------------
-   3️⃣ Selektoren sammeln (Klassen + Tags getrennt)
+   3️⃣ Nur Klassen sammeln
 -------------------------------------------------- */
 function extractSelectors(cssText) {
-
-  const classSelectors = [...new Set(
+  return [...new Set(
     [...cssText.matchAll(/\.([a-zA-Z0-9_-]+)(?![\w-])/g)]
       .map(m => m[1])
   )];
-
-  const tagWhitelist = new Set([
-    "h1","h2","h3","h4","h5","h6",
-    "p","a","button","input","textarea",
-    "select","label","ul","ol","li"
-  ]);
-
-  const tagSelectors = [...new Set(
-    [...cssText.matchAll(/(^|[}\s,])([a-z][a-z0-9-]*)\s*\{/gi)]
-      .map(m => m[2].toLowerCase())
-      .filter(t => tagWhitelist.has(t))
-  )];
-
-  return { classSelectors, tagSelectors };
 }
 
 /* --------------------------------------------------
-   4️⃣ CSS Regeln extrahieren (inkl. Media Split)
+   4️⃣ CSS Regeln extrahieren (nur Klassen)
 -------------------------------------------------- */
-function extractRelevantCSS(cssText, classSelectors, tagSelectors) {
+function extractRelevantCSS(cssText, classSelectors) {
 
   const components = {};
-  [...classSelectors, ...tagSelectors].forEach(s => (components[s] = []));
+  classSelectors.forEach(s => (components[s] = []));
 
   const classHit = (selector, cls) =>
     new RegExp(`\\.${cls}(?![\\w-])`).test(selector);
-
-  const tagHit = (selector, tag) =>
-    new RegExp(`(^|\\s|,)${tag}(\\s|\\{|:|\\.|#|\\[)`).test(selector);
 
   /* ---- Normale Regeln ---- */
   const ruleRegex = /([^{@}][^{]*?)\{([^}]*)\}/g;
@@ -102,12 +84,6 @@ function extractRelevantCSS(cssText, classSelectors, tagSelectors) {
     for (const cls of classSelectors) {
       if (classHit(selector, cls)) {
         components[cls].push(`${selector} {\n${body}\n}`);
-      }
-    }
-
-    for (const tag of tagSelectors) {
-      if (tagHit(selector, tag)) {
-        components[tag].push(`${selector} {\n${body}\n}`);
       }
     }
   }
@@ -131,18 +107,6 @@ function extractRelevantCSS(cssText, classSelectors, tagSelectors) {
       for (const cls of classSelectors) {
         if (classHit(sel, cls)) {
           components[cls].push(
-`${condition} {
-${sel} {
-${body}
-}
-}`
-          );
-        }
-      }
-
-      for (const tag of tagSelectors) {
-        if (tagHit(sel, tag)) {
-          components[tag].push(
 `${condition} {
 ${sel} {
 ${body}
@@ -195,11 +159,10 @@ function resolveVariables(components, variables) {
     const variables = extractCSSVariables(css);
     console.log(`🎛 ${Object.keys(variables).length} CSS variables found`);
 
-    const { classSelectors, tagSelectors } = extractSelectors(css);
+    const classSelectors = extractSelectors(css);
     console.log(`📦 ${classSelectors.length} classes found`);
-    console.log(`📦 ${tagSelectors.length} tags found`);
 
-    let components = extractRelevantCSS(css, classSelectors, tagSelectors);
+    let components = extractRelevantCSS(css, classSelectors);
     components = resolveVariables(components, variables);
 
     fs.writeFileSync(
