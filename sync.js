@@ -13,7 +13,9 @@ async function fetchText(url) {
   return await res.text();
 }
 
-// 🔍 Webflow CSS URL aus veröffentlichter Seite holen
+/* --------------------------------------------------
+   1️⃣ CSS URL finden
+-------------------------------------------------- */
 function findWebflowCSSUrl(html) {
   const matches = [...html.matchAll(/<link[^>]+href="([^"]+\.css)"/g)]
     .map(m => m[1]);
@@ -22,35 +24,56 @@ function findWebflowCSSUrl(html) {
     throw new Error("No CSS links found in page");
   }
 
-  // Entferne bekannte externe CSS wie Google Fonts
   const filtered = matches.filter(url =>
     !url.includes("google") &&
     !url.includes("gstatic")
   );
 
-  if (!filtered.length) {
-    throw new Error("No suitable CSS file found");
-  }
-
-  // Nimm die längste URL (meist Webflow Main CSS)
   const sorted = filtered.sort((a, b) => b.length - a.length);
-
   return sorted[0];
 }
 
+/* --------------------------------------------------
+   2️⃣ CSS Variablen extrahieren
+-------------------------------------------------- */
+function extractCSSVariables(cssText) {
+  const vars = {};
+  const rootMatch = cssText.match(/:root\s*\{([\s\S]*?)\}/);
 
-// 🧠 Alle Klassen aus CSS sammeln
-function extractAllClassesFromCSS(cssText) {
-  const matches = [...cssText.matchAll(/\.([a-zA-Z0-9_-]+)[\s\.\:\{]/g)];
-  return [...new Set(matches.map(m => m[1]))];
+  if (!rootMatch) return vars;
+
+  const varMatches = [...rootMatch[1].matchAll(/--([^:]+):\s*([^;]+);/g)];
+
+  varMatches.forEach(m => {
+    vars[`--${m[1].trim()}`] = m[2].trim();
+  });
+
+  return vars;
 }
 
-// 🎨 CSS Regeln je Klasse speichern
-function extractRelevantCSS(cssText, classes) {
-  const components = {};
-  classes.forEach(c => (components[c] = []));
+/* --------------------------------------------------
+   3️⃣ Selektoren sammeln (Klassen + Tags)
+-------------------------------------------------- */
+function extractAllSelectors(cssText) {
 
-  // 🔹 1. Normale (nicht verschachtelte) Regeln
+  const classMatches = [...cssText.matchAll(/\.([a-zA-Z0-9_-]+)[\s\.\:\{]/g)]
+    .map(m => m[1]);
+
+  const tagMatches = [...cssText.matchAll(/(^|\s|\}|,)(h[1-6]|p|input|textarea|button|a|ul|ol|li|div|span)\s*\{/gi)]
+    .map(m => m[2].toLowerCase());
+
+  return [...new Set([...classMatches, ...tagMatches])];
+}
+
+/* --------------------------------------------------
+   4️⃣ CSS Regeln extrahieren + Media sauber splitten
+-------------------------------------------------- */
+function extractRelevantCSS(cssText, selectors) {
+
+  const components = {};
+  selectors.forEach(s => (components[s] = []));
+
+  // Normale Regeln
   const ruleRegex = /([^{@}][^{]*?)\{([^}]*)\}/g;
   let m;
 
@@ -59,33 +82,76 @@ function extractRelevantCSS(cssText, classes) {
     const body = m[2].trim();
     if (!selector || !body) continue;
 
-    for (const c of classes) {
-      if (selector.includes("." + c)) {
-        components[c].push(`${selector} {\n${body}\n}`);
+    selectors.forEach(s => {
+      const isClass = selector.includes("." + s);
+      const isTag = selector.match(new RegExp(`(^|\\s|,)${s}(\\s|\\{|:)`));
+
+      if (isClass || isTag) {
+        components[s].push(`${selector} {\n${body}\n}`);
       }
-    }
+    });
   }
 
-  // 🔹 2. Media Queries komplett erfassen
-  const mediaRegex = /@media[^{]+\{([\s\S]*?\})\s*\}/g;
+  // Media Queries sauber zerlegen
+  const mediaRegex = /@media[^{]+\{([\s\S]+?)\}\s*\}/g;
   let mediaMatch;
 
   while ((mediaMatch = mediaRegex.exec(cssText)) !== null) {
-    const mediaBlock = mediaMatch[0];
+    const condition = mediaMatch[0].match(/@media[^{]+/)[0];
+    const innerCSS = mediaMatch[1];
 
-    for (const c of classes) {
-      if (mediaBlock.includes("." + c)) {
-        components[c].push(mediaBlock.trim());
-      }
-    }
+    const innerRules = [...innerCSS.matchAll(/([^{]+)\{([^}]+)\}/g)];
+
+    innerRules.forEach(rule => {
+      const selector = rule[1].trim();
+      const body = rule[2].trim();
+
+      selectors.forEach(s => {
+        const isClass = selector.includes("." + s);
+        const isTag = selector.match(new RegExp(`(^|\\s|,)${s}(\\s|\\{|:)`));
+
+        if (isClass || isTag) {
+          components[s].push(
+`${condition} {
+${selector} {
+${body}
+}
+}`
+          );
+        }
+      });
+    });
   }
 
   return components;
 }
 
+/* --------------------------------------------------
+   5️⃣ Variablen auflösen
+-------------------------------------------------- */
+function resolveVariables(components, variables) {
 
+  Object.keys(components).forEach(key => {
+    components[key] = components[key].map(rule => {
+
+      Object.keys(variables).forEach(v => {
+        const value = variables[v];
+        rule = rule.replace(new RegExp(`var\\(${v}\\)`, "g"), value);
+      });
+
+      return rule;
+    });
+  });
+
+  return components;
+}
+
+/* --------------------------------------------------
+   6️⃣ Hauptprozess
+-------------------------------------------------- */
 (async () => {
   try {
+
     console.log("🌍 Fetching page:", PAGE_URL);
     const html = await fetchText(PAGE_URL);
 
@@ -95,11 +161,20 @@ function extractRelevantCSS(cssText, classes) {
     const css = await fetchText(cssUrl);
     fs.writeFileSync("latest.css", css, "utf8");
 
-    const classes = extractAllClassesFromCSS(css);
-    console.log(`📦 ${classes.length} CSS classes found`);
+    const variables = extractCSSVariables(css);
+    console.log(`🎛 ${Object.keys(variables).length} CSS variables found`);
 
-    const components = extractRelevantCSS(css, classes);
-    fs.writeFileSync("components.json", JSON.stringify(components, null, 2), "utf8");
+    const selectors = extractAllSelectors(css);
+    console.log(`📦 ${selectors.length} selectors found`);
+
+    let components = extractRelevantCSS(css, selectors);
+    components = resolveVariables(components, variables);
+
+    fs.writeFileSync(
+      "components.json",
+      JSON.stringify(components, null, 2),
+      "utf8"
+    );
 
     console.log("✔ Updated components.json");
 
