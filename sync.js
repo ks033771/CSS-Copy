@@ -142,7 +142,19 @@ function resolveVariables(components, variables) {
 }
 
 /* --------------------------------------------------
-   6️⃣ Hauptprozess
+   6️⃣ Doppelte Regeln entfernen
+-------------------------------------------------- */
+function dedupeComponents(components) {
+
+  Object.keys(components).forEach(key => {
+    components[key] = [...new Set(components[key])];
+  });
+
+  return components;
+}
+
+/* --------------------------------------------------
+   7️⃣ Hauptprozess
 -------------------------------------------------- */
 (async () => {
   try {
@@ -163,7 +175,9 @@ function resolveVariables(components, variables) {
     console.log(`📦 ${classSelectors.length} classes found`);
 
     let components = extractRelevantCSS(css, classSelectors);
+
     components = resolveVariables(components, variables);
+    components = dedupeComponents(components); // 🔥 Dedupe eingebaut
 
     fs.writeFileSync(
       "components.json",
