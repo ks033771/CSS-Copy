@@ -1450,8 +1450,6 @@
     ".align-center {\nmargin-left: auto;\n  margin-right: auto;\n}"
   ],
   "button": [
-    "button[disabled], html input[disabled] {\ncursor: default;\n}",
-    "button::-moz-focus-inner, input::-moz-focus-inner {\nborder: 0;\n  padding: 0;\n}",
     ".button {\nbox-sizing: content-box;\n  border-radius: 2px;\n  background-color: var(--_canada-life-colors---red--cl-red-web);\n  color: white;\n  font-size: 1.125rem;\n  text-align: center;\n  justify-content: center;\n  align-items: center;\n  min-width: 9rem;\n  max-width: 22rem;\n  min-height: 2.25rem;\n  padding: .5rem 1.25rem;\n  font-weight: 600;\n  transition: box-shadow .2s, background-color .4s, transform .4s;\n  display: inline-flex;\n}",
     ".button:hover {\nbackground-color: #850822;\n  color: white;\n  box-shadow: 0 4px 12px #0000001a;\n}",
     ".button:active {\nbackground-color: #6d071c;\n}",
@@ -2134,34 +2132,5 @@
   "hide-mobile-portrait": [
     ".hide-mobile-portrait {\ndisplay: none;\n}",
     "@media screen and (max-width: 479px)  {\n.hide-mobile-portrait {\ndisplay: none;\n}\n}"
-  ],
-  "a": [
-    "a:active, a:hover {\noutline: 0;\n}",
-    "a:hover {\ncolor: #850822;\n}",
-    "a:active {\ncolor: #6d071c;\n}"
-  ],
-  "h1": [],
-  "textarea": [
-    "textarea.w-input, textarea.w-select {\nheight: auto;\n}"
-  ],
-  "input": [
-    "button, html input[type=\"button\"], input[type=\"reset\"] {\n-webkit-appearance: button;\n  cursor: pointer;\n}",
-    "button[disabled], html input[disabled] {\ncursor: default;\n}",
-    "button::-moz-focus-inner, input::-moz-focus-inner {\nborder: 0;\n  padding: 0;\n}",
-    "input[type=\"checkbox\"], input[type=\"radio\"] {\nbox-sizing: border-box;\n  padding: 0;\n}",
-    "input[type=\"number\"]::-webkit-inner-spin-button, input[type=\"number\"]::-webkit-outer-spin-button {\nheight: auto;\n}",
-    "input[type=\"search\"] {\n-webkit-appearance: none;\n}",
-    "input[type=\"search\"]::-webkit-search-cancel-button, input[type=\"search\"]::-webkit-search-decoration {\n-webkit-appearance: none;\n}",
-    "input.w-button {\n-webkit-appearance: button;\n}"
-  ],
-  "h6": [],
-  "h2": [],
-  "h3": [],
-  "h4": [],
-  "h5": [],
-  "p": [],
-  "ol": [],
-  "label": [],
-  "ul": [],
-  "li": []
+  ]
 }
