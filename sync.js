@@ -69,8 +69,13 @@ function extractRelevantCSS(cssText, classSelectors) {
   const components = {};
   classSelectors.forEach(s => (components[s] = []));
 
-  const classHit = (selector, cls) =>
-    new RegExp(`\\.${cls}(?![\\w-])`).test(selector);
+  const classHit = (selector, cls) => {
+
+  const regex = new RegExp(`^\\.${cls}(?![\\w-])(?:[:\\s\\{]|$)`);
+
+  return regex.test(selector);
+
+};
 
   /* ---- Normale Regeln ---- */
   const ruleRegex = /([^{@}][^{]*?)\{([^}]*)\}/g;
