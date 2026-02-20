@@ -168,12 +168,14 @@ function buildResolvedVariants(components) {
     if (!bodyMatch) return null;
 
     const body = bodyMatch[1].trim();
-
     const props = {};
+
     body.split(";").forEach(line => {
-      const [prop, val] = line.split(":");
-      if (prop && val) {
-        props[prop.trim()] = val.trim();
+      const parts = line.split(":");
+      if (parts.length === 2) {
+        const prop = parts[0].trim();
+        const value = parts[1].trim();
+        if (prop && value) props[prop] = value;
       }
     });
 
@@ -198,43 +200,87 @@ function buildResolvedVariants(components) {
 
     if (!components[base]) return;
 
-    const mergedRules = {};
+    const baseRules = components[base];
+    const variantRules = components[key];
 
-    // Base Regeln zuerst
-    components[base].forEach(rule => {
+    const merged = {};
+    const baseStates = {};
+    const variantStates = {};
+
+    /* -----------------------------
+       1️⃣ Base-Regeln parsen
+    ----------------------------- */
+    baseRules.forEach(rule => {
 
       const parsed = parseRule(rule);
       if (!parsed) return;
 
-      const newSelector = parsed.selector.replace(
+      const isState = parsed.selector.includes(":");
+
+      if (isState) {
+        baseStates[parsed.selector] = parsed.props;
+      } else {
+        merged[parsed.selector.replace(
+          new RegExp(`\\.${base}`, "g"),
+          "." + key
+        )] = { ...parsed.props };
+      }
+    });
+
+    /* -----------------------------
+       2️⃣ Variant-Regeln parsen
+    ----------------------------- */
+    variantRules.forEach(rule => {
+
+      const parsed = parseRule(rule);
+      if (!parsed) return;
+
+      const isState = parsed.selector.includes(":");
+
+      if (isState) {
+        variantStates[parsed.selector] = parsed.props;
+      } else {
+        const sel = parsed.selector;
+        if (!merged[sel]) merged[sel] = {};
+        Object.assign(merged[sel], parsed.props);
+      }
+    });
+
+    /* -----------------------------
+       3️⃣ States erzeugen
+    ----------------------------- */
+    Object.keys(baseStates).forEach(stateSelector => {
+
+      const newSelector = stateSelector.replace(
         new RegExp(`\\.${base}`, "g"),
         "." + key
       );
 
-      if (!mergedRules[newSelector]) {
-        mergedRules[newSelector] = {};
-      }
+      const finalProps = {
+        ...merged[`.${key}`],   // Variant-Base als Ausgang
+        ...variantStates[newSelector] // falls Variant eigenen State hat
+      };
 
-      Object.assign(mergedRules[newSelector], parsed.props);
+      merged[newSelector] = finalProps;
     });
 
-    // Variant Regeln überschreiben Base
-    components[key].forEach(rule => {
-
-      const parsed = parseRule(rule);
-      if (!parsed) return;
-
-      if (!mergedRules[parsed.selector]) {
-        mergedRules[parsed.selector] = {};
+    /* -----------------------------
+       4️⃣ Variant-eigene States ergänzen
+    ----------------------------- */
+    Object.keys(variantStates).forEach(sel => {
+      if (!merged[sel]) {
+        merged[sel] = {
+          ...merged[`.${key}`],
+          ...variantStates[sel]
+        };
       }
-
-      Object.assign(mergedRules[parsed.selector], parsed.props);
     });
 
-    // Wieder zusammenbauen
-    resolved[key] = Object.entries(mergedRules).map(
-      ([selector, props]) => buildRule(selector, props)
-    );
+    /* -----------------------------
+       5️⃣ Wieder zusammensetzen
+    ----------------------------- */
+    resolved[key] = Object.entries(merged)
+      .map(([selector, props]) => buildRule(selector, props));
 
   });
 
