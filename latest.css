@@ -2072,19 +2072,21 @@ textarea.w-input, textarea.w-select {
   --_canada-life-colors---greys-and-neutrals--cl-white: white;
   --_canada-life-typography---typography--lead-paragraph: 1.5rem;
   --_canada-life-colors---ui-support-colors--info: #007cbf;
+  --white: var(--_canada-life-colors---greys-and-neutrals--cl-white);
+  --black: var(--_canada-life-colors---greys-and-neutrals--cl-black);
   --color--brand-color-1: var(--_canada-life-colors---red--cl-red-web);
   --color--brand-color-2: var(--_canada-life-colors---greys-and-neutrals--cl-brand-grey);
   --color--navbar-text-color: var(--black);
   --_canada-life-tokens---border-radius--small: .5rem;
-  --black: var(--_canada-life-colors---greys-and-neutrals--cl-black);
   --_canada-life-typography---typography--h-mega: 3.375rem;
   --_canada-life-typography---typography--h-display: 3rem;
   --_canada-life-typography---fonts--foco: foco, sans-serif;
   --color--navbar-background: var(--_canada-life-colors---greys-and-neutrals--cl-light-grey-02);
-  --white: var(--_canada-life-colors---greys-and-neutrals--cl-white);
   --_canada-life-colors---greys-and-neutrals--cl-light-grey-02: #f0f0ef;
   --_canada-life-tokens---border-radius--round: 10rem;
   --_canada-life-colors---ui-support-colors--info-light: #e8f7ff;
+  --_canada-life-colors---ui-support-colors--success-light: #f2faf9;
+  --_canada-life-colors---ui-support-colors--cl-secondary: #005656;
   --_canada-life-colors---ui-support-colors--warning-light: #faf5e8;
   --_canada-life-colors---data-visualization--data-visualization-08: #b08824;
   --_canada-life-tokens---border-radius--large: 1.5rem;
@@ -2096,8 +2098,6 @@ textarea.w-input, textarea.w-select {
   --_canada-life-colors---greys-and-neutrals--cl-light-grey-01: #f7f7f7;
   --_canada-life-tokens---border-radius--medium: 1rem;
   --_canada-life-colors---greys-and-neutrals--cl-grey-base: #93948e;
-  --_canada-life-colors---ui-support-colors--cl-secondary: #005656;
-  --_canada-life-colors---ui-support-colors--success-light: #f2faf9;
   --_canada-life-colors---ui-support-colors--error: #d20d35;
   --_canada-life-colors---ui-support-colors--error-light: #feeff2;
   --_canada-life-colors---ui-support-colors--warning: #b08824;
@@ -3188,10 +3188,6 @@ figcaption {
   border-bottom-width: .125rem;
 }
 
-.button.is-secondary:hover {
-  background-color: #fff0;
-}
-
 .button.is-secondary.is-small {
   padding: .5rem 1.25rem;
 }
@@ -3228,6 +3224,12 @@ figcaption {
 .button.info {
   background-color: var(--_canada-life-colors---ui-support-colors--info);
   color: var(--_canada-life-colors---greys-and-neutrals--cl-white);
+}
+
+.button.is-test {
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid #000;
 }
 
 .fs-styleguide_classes {
@@ -3699,10 +3701,6 @@ figcaption {
   background-color: #fff;
 }
 
-.navbar_link.not-active-now {
-  pointer-events: none;
-}
-
 .menu-icon_line-middle-inner {
   width: 4px;
   height: 0;
@@ -4128,7 +4126,8 @@ figcaption {
 }
 
 .text-style-badge.info {
-  color: var(--_canada-life-colors---ui-support-colors--info);
+  background-color: var(--_canada-life-colors---ui-support-colors--success-light);
+  color: var(--_canada-life-colors---ui-support-colors--cl-secondary);
 }
 
 .text-style-badge.components {
@@ -4165,15 +4164,15 @@ figcaption {
 }
 
 .navigation-link.w--current {
-  background-color: var(--_canada-life-colors---ui-support-colors--info-light);
-  color: var(--_canada-life-colors---ui-support-colors--info);
+  background-color: var(--_canada-life-colors---ui-support-colors--success-light);
+  color: var(--_canada-life-colors---ui-support-colors--cl-secondary);
   border-bottom-color: currentColor;
   font-weight: 600;
 }
 
 .section.divider {
-  background-color: var(--_canada-life-colors---ui-support-colors--info-light);
-  color: var(--_canada-life-colors---ui-support-colors--info);
+  background-color: var(--_canada-life-colors---ui-support-colors--success-light);
+  color: var(--_canada-life-colors---ui-support-colors--cl-secondary);
 }
 
 .section.divider.components {
@@ -5237,6 +5236,11 @@ figcaption {
   outline-style: dashed;
   display: none;
   position: fixed;
+}
+
+.deactivated {
+  opacity: .25;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 991px) {
