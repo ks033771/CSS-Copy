@@ -2071,9 +2071,9 @@ textarea.w-input, textarea.w-select {
   --_canada-life-tokens---border-radius--button: 4px;
   --color--brand-color-1: var(--_canada-life-colors---red--cl-red-web);
   --_canada-life-colors---greys-and-neutrals--cl-white: white;
+  --_canada-life-typography---typography--lead-paragraph: 1.5rem;
   --_canada-life-colors---ui-support-colors--info: #007cbf;
   --color--brand-color-2: var(--_canada-life-colors---greys-and-neutrals--cl-brand-grey);
-  --_canada-life-typography---typography--lead-paragraph: 1.5rem;
   --color--navbar-text-color: var(--black);
   --_canada-life-tokens---border-radius--small: .5rem;
   --black: var(--_canada-life-colors---greys-and-neutrals--cl-black);
@@ -3177,6 +3177,7 @@ figcaption {
 }
 
 .button.is-large {
+  font-size: var(--_canada-life-typography---typography--lead-paragraph);
   padding: 1rem 2rem;
 }
 
