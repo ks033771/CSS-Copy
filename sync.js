@@ -159,34 +159,83 @@ function dedupeComponents(components) {
 -------------------------------------------------- */
 function buildResolvedVariants(components) {
 
+  function parseRule(rule) {
+    const selectorMatch = rule.match(/^([^{]+)\{/);
+    if (!selectorMatch) return null;
+
+    const selector = selectorMatch[1].trim();
+    const bodyMatch = rule.match(/\{([\s\S]*)\}/);
+    if (!bodyMatch) return null;
+
+    const body = bodyMatch[1].trim();
+
+    const props = {};
+    body.split(";").forEach(line => {
+      const [prop, val] = line.split(":");
+      if (prop && val) {
+        props[prop.trim()] = val.trim();
+      }
+    });
+
+    return { selector, props };
+  }
+
+  function buildRule(selector, props) {
+    const lines = Object.entries(props)
+      .map(([k, v]) => `  ${k}: ${v};`)
+      .join("\n");
+
+    return `${selector} {\n${lines}\n}`;
+  }
+
   const resolved = { ...components };
 
   Object.keys(components).forEach(key => {
 
     if (!key.includes(".")) return;
 
-    const parts = key.split(".");
-    const base = parts[0];
+    const base = key.split(".")[0];
 
     if (!components[base]) return;
 
-    const merged = [];
+    const mergedRules = {};
 
-    // Base Regeln umschreiben
+    // Base Regeln zuerst
     components[base].forEach(rule => {
 
-      const updated = rule.replace(
+      const parsed = parseRule(rule);
+      if (!parsed) return;
+
+      const newSelector = parsed.selector.replace(
         new RegExp(`\\.${base}`, "g"),
         "." + key
       );
 
-      merged.push(updated);
+      if (!mergedRules[newSelector]) {
+        mergedRules[newSelector] = {};
+      }
+
+      Object.assign(mergedRules[newSelector], parsed.props);
     });
 
-    // Eigene Regeln hinzufügen
-    components[key].forEach(rule => merged.push(rule));
+    // Variant Regeln überschreiben Base
+    components[key].forEach(rule => {
 
-    resolved[key] = [...new Set(merged)];
+      const parsed = parseRule(rule);
+      if (!parsed) return;
+
+      if (!mergedRules[parsed.selector]) {
+        mergedRules[parsed.selector] = {};
+      }
+
+      Object.assign(mergedRules[parsed.selector], parsed.props);
+    });
+
+    // Wieder zusammenbauen
+    resolved[key] = Object.entries(mergedRules).map(
+      ([selector, props]) => buildRule(selector, props)
+    );
+
   });
 
   return resolved;
