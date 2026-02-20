@@ -3170,7 +3170,10 @@ figcaption {
 }
 
 .button.is-small {
-  padding: .5rem 1.25rem;
+  font-size: var(--_canada-life-typography---typography--xsmall-paragraph);
+  min-width: auto;
+  min-height: auto;
+  padding: .7rem 1.25rem;
 }
 
 .button.is-large {
