@@ -29,8 +29,7 @@ function findWebflowCSSUrl(html) {
     !url.includes("gstatic")
   );
 
-  const sorted = filtered.sort((a, b) => b.length - a.length);
-  return sorted[0];
+  return filtered.sort((a, b) => b.length - a.length)[0];
 }
 
 /* --------------------------------------------------
@@ -52,48 +51,54 @@ function extractCSSVariables(cssText) {
 }
 
 /* --------------------------------------------------
-   3️⃣ Nur Klassen sammeln
+   3️⃣ Klassen + Combo-Klassen extrahieren
 -------------------------------------------------- */
 function extractSelectors(cssText) {
-  return [...new Set(
-    [...cssText.matchAll(/\.([a-zA-Z0-9_-]+)(?![\w-])/g)]
-      .map(m => m[1])
-  )];
+
+  // Erfasst:
+  // .button
+  // .button.is-small
+  // .button.is-secondary.is-small
+  const matches = [...cssText.matchAll(/\.([a-zA-Z0-9_-]+(?:\.[a-zA-Z0-9_-]+)*)/g)]
+    .map(m => m[1]);
+
+  return [...new Set(matches)];
 }
 
 /* --------------------------------------------------
-   4️⃣ CSS Regeln extrahieren (nur Klassen)
+   4️⃣ CSS Regeln extrahieren (exaktes Matching)
 -------------------------------------------------- */
-function extractRelevantCSS(cssText, classSelectors) {
+function extractRelevantCSS(cssText, selectors) {
 
   const components = {};
-  classSelectors.forEach(s => (components[s] = []));
+  selectors.forEach(s => (components[s] = []));
 
-  const classHit = (selector, cls) => {
-
-  const regex = new RegExp(`^\\.${cls}(?![\\w-])(?:[:\\s\\{]|$)`);
-
-  return regex.test(selector);
-
-};
-
-  /* ---- Normale Regeln ---- */
   const ruleRegex = /([^{@}][^{]*?)\{([^}]*)\}/g;
+
+  function selectorMatches(fullSelector, target) {
+
+    const escaped = target.replace(/\./g, "\\.");
+    const regex = new RegExp(`(^|\\s|,)\\.${escaped}(?=[\\s:{]|$)`);
+    return regex.test(fullSelector);
+  }
+
   let m;
 
+  /* ---------- Normale Regeln ---------- */
   while ((m = ruleRegex.exec(cssText)) !== null) {
+
     const selector = m[1].trim();
     const body = m[2].trim();
     if (!selector || !body) continue;
 
-    for (const cls of classSelectors) {
-      if (classHit(selector, cls)) {
-        components[cls].push(`${selector} {\n${body}\n}`);
+    selectors.forEach(sel => {
+      if (selectorMatches(selector, sel)) {
+        components[sel].push(`${selector} {\n${body}\n}`);
       }
-    }
+    });
   }
 
-  /* ---- Media Queries sauber splitten ---- */
+  /* ---------- Media Queries splitten ---------- */
   const mediaOuter = /@media[^{]+\{([\s\S]+?)\}\s*\}/g;
   let mm;
 
@@ -104,14 +109,14 @@ function extractRelevantCSS(cssText, classSelectors) {
 
     const innerRules = [...innerCSS.matchAll(/([^{]+)\{([^}]+)\}/g)];
 
-    for (const r of innerRules) {
+    innerRules.forEach(r => {
 
       const sel = r[1].trim();
       const body = r[2].trim();
 
-      for (const cls of classSelectors) {
-        if (classHit(sel, cls)) {
-          components[cls].push(
+      selectors.forEach(target => {
+        if (selectorMatches(sel, target)) {
+          components[target].push(
 `${condition} {
 ${sel} {
 ${body}
@@ -119,8 +124,8 @@ ${body}
 }`
           );
         }
-      }
-    }
+      });
+    });
   }
 
   return components;
@@ -135,8 +140,10 @@ function resolveVariables(components, variables) {
     components[key] = components[key].map(rule => {
 
       Object.keys(variables).forEach(v => {
-        const value = variables[v];
-        rule = rule.replace(new RegExp(`var\\(${v}\\)`, "g"), value);
+        rule = rule.replace(
+          new RegExp(`var\\(${v}\\)`, "g"),
+          variables[v]
+        );
       });
 
       return rule;
@@ -176,13 +183,13 @@ function dedupeComponents(components) {
     const variables = extractCSSVariables(css);
     console.log(`🎛 ${Object.keys(variables).length} CSS variables found`);
 
-    const classSelectors = extractSelectors(css);
-    console.log(`📦 ${classSelectors.length} classes found`);
+    const selectors = extractSelectors(css);
+    console.log(`📦 ${selectors.length} selectors found`);
 
-    let components = extractRelevantCSS(css, classSelectors);
+    let components = extractRelevantCSS(css, selectors);
 
     components = resolveVariables(components, variables);
-    components = dedupeComponents(components); // 🔥 Dedupe eingebaut
+    components = dedupeComponents(components);
 
     fs.writeFileSync(
       "components.json",
