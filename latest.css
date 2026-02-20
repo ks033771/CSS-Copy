@@ -2067,28 +2067,51 @@ textarea.w-input, textarea.w-select {
   --_canada-life-typography---typography--small-paragraph: 1rem;
   --color--grey: var(--_canada-life-colors---greys-and-neutrals--cl-light-grey-03);
   --font--navbar-width: 220px;
-  --_canada-life-tokens---border-radius--button: 2px;
+  --_canada-life-colors---greys-and-neutrals--cl-light-grey-03: #d2d2cf;
+  --_canada-life-tokens---border-radius--button: 4px;
   --color--brand-color-1: var(--_canada-life-colors---red--cl-red-web);
   --_canada-life-colors---greys-and-neutrals--cl-white: white;
   --_canada-life-colors---ui-support-colors--info: #007cbf;
   --color--brand-color-2: var(--_canada-life-colors---greys-and-neutrals--cl-brand-grey);
   --_canada-life-typography---typography--lead-paragraph: 1.5rem;
-  --white: var(--_canada-life-colors---greys-and-neutrals--cl-white);
+  --color--navbar-text-color: var(--black);
   --_canada-life-tokens---border-radius--small: .5rem;
   --black: var(--_canada-life-colors---greys-and-neutrals--cl-black);
   --_canada-life-typography---typography--h-mega: 3.375rem;
   --_canada-life-typography---typography--h-display: 3rem;
   --_canada-life-typography---fonts--foco: foco, sans-serif;
-  --_canada-life-colors---greys-and-neutrals--cl-light-grey-03: #d2d2cf;
-  --_canada-life-colors---greys-and-neutrals--cl-dark-grey: #525146;
+  --color--navbar-background: var(--_canada-life-colors---greys-and-neutrals--cl-light-grey-02);
+  --white: var(--_canada-life-colors---greys-and-neutrals--cl-white);
   --_canada-life-colors---greys-and-neutrals--cl-light-grey-02: #f0f0ef;
   --_canada-life-tokens---border-radius--round: 10rem;
   --_canada-life-colors---ui-support-colors--info-light: #e8f7ff;
+  --_canada-life-colors---ui-support-colors--warning-light: #faf5e8;
+  --_canada-life-colors---data-visualization--data-visualization-08: #b08824;
   --_canada-life-tokens---border-radius--large: 1.5rem;
-  --color--sdsssd: white;
+  --_canada-life-colors---ui-color-badges--cl-badge-neutral-01: #d9f7ff;
+  --color--sdsssd\<deleted\|variable-9eb1f6db-da42-569f-d15e-3d4f3d518ebf\>: white;
   --_canada-life-colors---ui-support-colors--success: #007f7f;
+  --_canada-life-colors---greys-and-neutrals--cl-dark-grey: #525146;
   --_canada-life-colors---greys-and-neutrals--cl-dark-grey-02: #6d6e68;
   --_canada-life-colors---greys-and-neutrals--cl-light-grey-01: #f7f7f7;
+  --_canada-life-tokens---border-radius--medium: 1rem;
+  --_canada-life-colors---greys-and-neutrals--cl-grey-base: #93948e;
+  --_canada-life-colors---ui-support-colors--cl-secondary: #005656;
+  --_canada-life-colors---ui-support-colors--success-light: #f2faf9;
+  --_canada-life-colors---ui-support-colors--error: #d20d35;
+  --_canada-life-colors---ui-support-colors--error-light: #feeff2;
+  --_canada-life-colors---ui-support-colors--warning: #b08824;
+  --_canada-life-colors---ui-color-badges--cl-badge-neutral-02: #f7eff6;
+  --_canada-life-colors---ui-color-badges--cl-badge-positive: #f0f6dd;
+  --_canada-life-colors---ui-color-badges--cl-badge-warning: #fcf1c5;
+  --_canada-life-colors---ui-color-badges--cl-badge-brand: #e7f6f4;
+  --_canada-life-colors---data-visualization--data-visualization-07: #5f5aa2;
+  --_canada-life-colors---data-visualization--data-visualization-06: #bd7cb5;
+  --_canada-life-colors---data-visualization--data-visualization-05: #00659b;
+  --_canada-life-colors---data-visualization--data-visualization-04: #00a1ce;
+  --_canada-life-colors---data-visualization--data-visualization-03: #7e9e27;
+  --_canada-life-colors---data-visualization--data-visualization-02: #3aa493;
+  --_canada-life-colors---data-visualization--data-visualization-01: #006565;
   --font--font-name: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --_canada-life-inputs---inputs--min-height: 3rem;
   --_canada-life-width---site-max-width: 71.25rem;
@@ -2102,21 +2125,14 @@ textarea.w-input, textarea.w-select {
   --_canada-life-spacing---lg: 1.5rem;
   --_canada-life-width---flyout-max-width-xs: 18.75rem;
   --_canada-life-width---flyout-max-width-sm: 25rem;
-  --_canada-life-colors---greys-and-neutrals--cl-grey-base: #93948e;
   --_canada-life-spacing---3xl: 4rem;
   --_canada-life-spacing---4xl: 5rem;
-  --_canada-life-colors---ui-support-colors--cl-secondary: #005656;
-  --_canada-life-colors---ui-support-colors--success-light: #f2faf9;
-  --_canada-life-colors---ui-support-colors--warning: #b08824;
-  --_canada-life-colors---ui-support-colors--warning-light: #faf5e8;
-  --_canada-life-colors---ui-support-colors--error: #d20d35;
-  --_canada-life-colors---ui-support-colors--error-light: #feeff2;
   --_canada-life-tokens---border-width--default: 1px;
   --_canada-life-colors---ui-color-badges--white: var(--_canada-life-colors---greys-and-neutrals--cl-white);
   --_canada-life-tokens---border-width--hover: 2px;
   --_canada-life-colors---ui-color-badges--grey: var(--_canada-life-colors---greys-and-neutrals--cl-light-grey-02);
   --_canada-life-tokens---border-width--wide: 3px;
-  --_canada-life-colors---ui-color-badges--cl-badge-brand: white;
+  --_canada-life-colors---ui-color-badges--cl-badge-negative: #feeff2;
   --_canada-life-colors---accessibility--outline-width: 3px;
   --_canada-life-colors---accessibility--outline-offset: 2px;
   --_canada-life-tokens---border-width--large: 4px;
@@ -2124,7 +2140,6 @@ textarea.w-input, textarea.w-select {
   --_canada-life-tokens---timing--short: .4;
   --_canada-life-tokens---timing--medium: .8;
   --_canada-life-tokens---timing--long: 1.2;
-  --_canada-life-tokens---border-radius--medium: 1rem;
 }
 
 .w-checkbox {
@@ -2297,6 +2312,10 @@ img {
 label {
   margin-bottom: .25rem;
   font-weight: 500;
+}
+
+strong {
+  font-weight: 600;
 }
 
 blockquote {
@@ -3034,7 +3053,16 @@ figcaption {
 }
 
 .container.hero {
+  max-width: 1480px;
   display: flex;
+}
+
+.container.wide {
+  max-width: 1480px;
+}
+
+.container.wide.menu-closed {
+  padding-left: 8rem;
 }
 
 .icon-height-medium {
@@ -3072,8 +3100,14 @@ figcaption {
 }
 
 .main-wrapper.smaller {
-  margin-left: clamp(0rem, calc((1920px - 100vw) * 100), var(--font--navbar-width));
+  margin-left: var(--font--navbar-width);
+  width: calc(100% - var(--font--navbar-width));
+  flex: 0 auto;
   position: relative;
+}
+
+.main-wrapper.smaller.width-divider-line {
+  border-left: 1px solid var(--_canada-life-colors---greys-and-neutrals--cl-light-grey-03);
 }
 
 .max-width-xxsmall {
@@ -3115,19 +3149,17 @@ figcaption {
 .button:hover {
   background-color: var(--_canada-life-colors---red--cl-medium-red);
   color: var(--_canada-life-colors---greys-and-neutrals--cl-white);
-  box-shadow: 0 4px 12px #0000001a;
+  box-shadow: 0 4px 12px #00000026;
 }
 
 .button:active {
   background-color: var(--_canada-life-colors---red--cl-dark-red);
 }
 
-.button:focus {
-  box-sizing: content-box;
+.button:focus-visible, .button[data-wf-focus-visible] {
   outline-color: var(--_canada-life-colors---red--cl-red-web);
   outline-offset: 3px;
   outline-width: 3px;
-  outline-style: solid;
   box-shadow: 0 0 0 3px #fff;
 }
 
@@ -3267,6 +3299,7 @@ figcaption {
 .column-wrapper {
   grid-column-gap: 2.5rem;
   grid-row-gap: 2.5rem;
+  flex-flow: wrap;
   display: flex;
 }
 
@@ -3308,7 +3341,7 @@ figcaption {
   color: var(--color--brand-color-2);
 }
 
-.column {
+.column, .column.col-33 {
   flex: 1;
 }
 
@@ -3519,7 +3552,7 @@ figcaption {
 
 .navbar {
   z-index: 4;
-  color: var(--white);
+  color: var(--color--navbar-text-color);
   scrollbar-gutter: stable;
   border-bottom: 1px solid #000;
   flex-flow: column;
@@ -3638,7 +3671,7 @@ figcaption {
   border-top-right-radius: var(--_canada-life-tokens---border-radius--small);
   border-bottom-left-radius: var(--_canada-life-tokens---border-radius--small);
   border-bottom-right-radius: var(--_canada-life-tokens---border-radius--small);
-  color: var(--color--white);
+  color: var(--color--navbar-text-color);
   font-size: var(--_canada-life-typography---typography--xsmall-paragraph);
   justify-content: space-between;
   align-items: center;
@@ -3650,12 +3683,16 @@ figcaption {
 }
 
 .navbar_link:hover {
-  color: var(--white);
-  background-color: #ffffff1a;
+  color: var(--color--navbar-text-color);
+  background-color: #fff;
 }
 
 .navbar_link.w--current {
-  background-color: #ffffff1a;
+  background-color: #fff;
+}
+
+.navbar_link.not-active-now {
+  pointer-events: none;
 }
 
 .menu-icon_line-middle-inner {
@@ -3900,20 +3937,23 @@ figcaption {
 }
 
 .navbar-logo-wrapper {
-  color: var(--_canada-life-colors---greys-and-neutrals--cl-white);
+  color: #ba0c2f;
   line-height: 0;
   font-size: inherit;
   width: 1em;
+  transition-property: color;
+  transition-duration: .2s;
+  transition-timing-function: cubic-bezier(.445, .05, .55, .95);
 }
 
 .navbar-logo-wrapper:hover {
-  color: var(--_canada-life-colors---greys-and-neutrals--cl-light-grey-03);
+  color: var(--_canada-life-colors---red--cl-medium-red);
 }
 
 .navbar-menu-close-wrapper {
   z-index: 5;
   width: var(--font--navbar-width);
-  background-color: var(--black);
+  background-color: var(--color--navbar-background);
   justify-content: space-between;
   align-items: center;
   padding-bottom: 1rem;
@@ -3929,7 +3969,6 @@ figcaption {
   grid-column-gap: .5rem;
   grid-row-gap: .5rem;
   border-radius: var(--_canada-life-tokens---border-radius--small);
-  color: var(--white);
   cursor: w-resize;
   background-color: #0000;
   justify-content: space-between;
@@ -3941,7 +3980,8 @@ figcaption {
 }
 
 .close-button:hover {
-  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-dark-grey);
+  background-color: var(--white);
+  color: var(--_canada-life-colors---red--cl-red-web);
   transform: translate(-.1em);
 }
 
@@ -3951,7 +3991,8 @@ figcaption {
 }
 
 .close-button.open-again:hover {
-  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-light-grey-02);
+  color: var(--_canada-life-colors---red--cl-red-web);
+  transform: translate(.1em);
 }
 
 .icon-1x1-normal {
@@ -3980,7 +4021,7 @@ figcaption {
 }
 
 .navbar-background {
-  background-color: var(--black);
+  background-color: var(--color--navbar-background);
   width: 100%;
   min-height: 100vh;
   position: absolute;
@@ -3997,7 +4038,6 @@ figcaption {
   grid-column-gap: .5rem;
   grid-row-gap: .5rem;
   opacity: .5;
-  color: var(--_canada-life-colors---greys-and-neutrals--cl-white);
   background-color: #0000;
   justify-content: flex-start;
   align-items: center;
@@ -4083,6 +4123,11 @@ figcaption {
   color: var(--_canada-life-colors---ui-support-colors--info);
 }
 
+.text-style-badge.components {
+  background-color: var(--_canada-life-colors---ui-support-colors--warning-light);
+  color: var(--_canada-life-colors---data-visualization--data-visualization-08);
+}
+
 .sticky-section-container {
   position: relative;
 }
@@ -4123,6 +4168,10 @@ figcaption {
   color: var(--_canada-life-colors---ui-support-colors--info);
 }
 
+.section.divider.components {
+  background-color: var(--_canada-life-colors---ui-color-badges--cl-badge-neutral-01);
+}
+
 .padding-section-hero {
   padding-top: 4rem;
   padding-bottom: 5rem;
@@ -4143,6 +4192,10 @@ figcaption {
   display: none;
 }
 
+.spacer.show {
+  width: 5rem;
+}
+
 .navbar-bottom-wrapper {
   z-index: 5;
   grid-column-gap: 2.5rem;
@@ -4161,12 +4214,13 @@ figcaption {
 
 .gap-toggle {
   z-index: 1;
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
   border-top-left-radius: var(--_canada-life-tokens---border-radius--round);
   border-top-right-radius: var(--_canada-life-tokens---border-radius--round);
   border-bottom-left-radius: var(--_canada-life-tokens---border-radius--round);
   border-bottom-right-radius: var(--_canada-life-tokens---border-radius--round);
-  background-color: var(--_canada-life-colors---ui-support-colors--info);
-  color: var(--color--sdsssd);
+  background-color: var(--white);
   font-size: var(--_canada-life-typography---typography--xsmall-paragraph);
   cursor: pointer;
   border: none;
@@ -4174,13 +4228,10 @@ figcaption {
   margin-left: auto;
   margin-right: 2rem;
   padding: .25rem .75rem;
+  font-weight: 600;
+  display: flex;
   position: sticky;
   top: .5rem;
-  left: calc(100vw - 2rem);
-}
-
-.gap-toggle:hover {
-  filter: brightness(125%);
 }
 
 .spacing-gap {
@@ -4203,7 +4254,7 @@ figcaption {
   border-bottom-left-radius: var(--_canada-life-tokens---border-radius--small);
   border-bottom-right-radius: var(--_canada-life-tokens---border-radius--small);
   background-color: var(--_canada-life-colors---ui-support-colors--info);
-  color: var(--color--sdsssd);
+  color: var(--color--sdsssd\<deleted\|variable-9eb1f6db-da42-569f-d15e-3d4f3d518ebf\>);
   font-size: var(--_canada-life-typography---typography--xsmall-paragraph);
   text-transform: uppercase;
   margin-top: -.25em;
@@ -4228,7 +4279,7 @@ figcaption {
   border-bottom-left-radius: var(--_canada-life-tokens---border-radius--round);
   border-bottom-right-radius: var(--_canada-life-tokens---border-radius--round);
   background-color: var(--_canada-life-colors---ui-support-colors--success);
-  color: var(--color--sdsssd);
+  color: var(--color--sdsssd\<deleted\|variable-9eb1f6db-da42-569f-d15e-3d4f3d518ebf\>);
   font-size: var(--_canada-life-typography---typography--xsmall-paragraph);
   text-transform: uppercase;
   pointer-events: none;
@@ -4411,17 +4462,773 @@ figcaption {
 
 .section-hero-start {
   z-index: 3;
-  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-black);
-  color: var(--white);
   position: relative;
 }
 
 .heading-style-giant {
   margin-bottom: 1.5rem;
   font-family: foco, sans-serif;
-  font-size: clamp(4rem, 10vw, 6rem);
+  font-size: clamp(2.75rem, 8vw, 4.5rem);
   font-weight: 300;
   line-height: 1.1;
+}
+
+.ms-toggle-bg {
+  z-index: 0;
+  background-color: #e2e2e2;
+  border-radius: 100px;
+  justify-content: flex-start;
+  align-items: center;
+  transition: background-color .2s;
+  display: flex;
+  position: absolute;
+  inset: 0%;
+}
+
+.ms-toggle-dot {
+  z-index: 1;
+  aspect-ratio: 1;
+  background-color: #fff;
+  border-radius: 50%;
+  height: 1em;
+  transition: left .2s;
+  box-shadow: 0 1px 5px #0003;
+}
+
+.ms-toggle-dot.w--redirected-checked {
+  background-color: #fff;
+  background-image: none;
+  left: 39px;
+}
+
+.ms-toggle-wrapper {
+  border-radius: var(--_canada-life-tokens---border-radius--round);
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-light-grey-03);
+  justify-content: flex-start;
+  align-items: center;
+  width: 3rem;
+  padding: .25em;
+  transition: flex .2s;
+  display: flex;
+  position: relative;
+}
+
+.ms-toggle-wrapper.active {
+  background-color: #00c742;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.col-33 {
+  flex: 0 auto;
+  min-width: calc(33.333% - 1.66667rem);
+  max-width: calc(33.333% - 1.66667rem);
+}
+
+.fs-stylguide-headline-idon-2 {
+  color: #009bd9;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-right: 1rem;
+}
+
+.col-25-50 {
+  flex: 1;
+  min-width: calc(25% - 1.50004rem);
+  max-width: calc(50% - 1rem);
+}
+
+.ml-100 {
+  flex: 1;
+}
+
+.container-2 {
+  flex-flow: column;
+  width: 96%;
+  max-width: 1680px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  position: relative;
+}
+
+.col-25 {
+  min-width: calc(25% - 1.87547rem);
+  max-width: calc(25% - 1.50038rem);
+}
+
+.m-100 {
+  flex: 1;
+  min-width: calc(25% - 1.50004rem);
+  max-width: calc(50% - 1rem);
+}
+
+.col-66 {
+  flex: 0 auto;
+  min-width: calc(66.666% - 1.25rem);
+  max-width: calc(66.666% - 1.25rem);
+}
+
+.ml-50 {
+  flex: 1;
+  min-width: calc(25% - 1.50004rem);
+  max-width: calc(50% - 1rem);
+}
+
+.col-75 {
+  flex: 1;
+  min-width: calc(75% - .625rem);
+  max-width: calc(75% - .625rem);
+}
+
+.col-33-50 {
+  flex: 1;
+  min-width: calc(33% - 1.66667rem);
+  max-width: calc(50% - 1.25rem);
+}
+
+.col-50 {
+  min-width: calc(50% - 1.25rem);
+  max-width: calc(50% - 1.25rem);
+}
+
+.padding-section-large-2 {
+  flex: 1;
+  height: 100%;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  position: relative;
+}
+
+.big-white-card {
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  border-top-left-radius: var(--_canada-life-tokens---border-radius--large);
+  border-top-right-radius: var(--_canada-life-tokens---border-radius--large);
+  border-bottom-left-radius: var(--_canada-life-tokens---border-radius--large);
+  border-bottom-right-radius: var(--_canada-life-tokens---border-radius--large);
+  background-color: var(--white);
+  flex-flow: column;
+  width: 500px;
+  min-width: 100%;
+  padding: 2.5rem;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 1px 4px #00000029;
+}
+
+.text-style-paragraph-xlarge {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+.two-col-paragraph {
+  column-count: 2;
+  column-gap: 2.5rem;
+  max-width: none;
+}
+
+.code-embed-3 {
+  transform: scale(.7);
+}
+
+.placeholder {
+  aspect-ratio: 2.75;
+  border-top-left-radius: var(--_canada-life-tokens---border-radius--large);
+  border-top-right-radius: var(--_canada-life-tokens---border-radius--large);
+  border-bottom-left-radius: var(--_canada-life-tokens---border-radius--large);
+  border-bottom-right-radius: var(--_canada-life-tokens---border-radius--large);
+  object-fit: cover;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  overflow: clip;
+  box-shadow: 0 7px 29px #64646f33;
+}
+
+.background-video {
+  aspect-ratio: 7;
+  height: 100%;
+}
+
+.swiper-2 {
+  width: 100%;
+  min-width: 0;
+  position: relative;
+}
+
+.swiper-wrapper {
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+.swiper-slide {
+  min-width: 30%;
+  max-width: 25rem;
+  margin-right: 2rem;
+  transition: width 50ms ease-out;
+  position: relative;
+  inset: 0%;
+}
+
+.menu-item-in-swiper-wrapper {
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  border-radius: var(--_canada-life-tokens---border-radius--medium);
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-light-grey-01);
+  color: var(--_canada-life-colors---greys-and-neutrals--cl-black);
+  border: 1px #0000;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100%;
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: box-shadow .2s cubic-bezier(.445, .05, .55, .95), transform .1s cubic-bezier(.445, .05, .55, .95), border .2s cubic-bezier(.445, .05, .55, .95), background-color .2s cubic-bezier(.445, .05, .55, .95);
+  display: flex;
+}
+
+.menu-item-in-swiper-wrapper:hover {
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-white);
+  color: var(--_canada-life-colors---greys-and-neutrals--cl-black);
+  border-style: none;
+  border-color: currentColor;
+  box-shadow: 0 4px 12px #0000001a;
+}
+
+.menu-item-in-swiper-wrapper:active {
+  transform: scale(.99);
+}
+
+.swiper-nav {
+  grid-column-gap: 0rem;
+  grid-row-gap: 0rem;
+  border-radius: var(--_canada-life-tokens---border-radius--round);
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-white);
+  margin-top: auto;
+  display: flex;
+  overflow: hidden;
+}
+
+.swiper-2-button-prev {
+  border-radius: var(--_canada-life-tokens---border-radius--round);
+  color: var(--_canada-life-colors---greys-and-neutrals--cl-grey-base);
+  text-align: center;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem .7rem;
+  font-weight: 600;
+  transition: transform .2s ease-out;
+  display: flex;
+  transform: rotate(180deg);
+}
+
+.swiper-2-button-prev:hover {
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-light-grey-02);
+  color: var(--_canada-life-colors---greys-and-neutrals--cl-grey-base);
+}
+
+.swiper-2-button-prev:active {
+  transform-origin: 50%;
+  transform: rotate(180deg);
+}
+
+.swiper-2-button-next {
+  border-radius: var(--_canada-life-tokens---border-radius--round);
+  color: var(--_canada-life-colors---greys-and-neutrals--cl-grey-base);
+  text-align: center;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem .7rem;
+  font-weight: 600;
+  transition: transform .2s ease-out;
+  display: flex;
+}
+
+.swiper-2-button-next:hover {
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-light-grey-02);
+  color: var(--_canada-life-colors---greys-and-neutrals--cl-grey-base);
+}
+
+.button-card-wrapper {
+  color: var(--_canada-life-colors---red--cl-red-web);
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  display: flex;
+}
+
+.button-only-icon {
+  box-sizing: content-box;
+  aspect-ratio: 1;
+  border-radius: var(--_canada-life-tokens---border-radius--button);
+  background-color: var(--color--brand-color-1);
+  color: var(--_canada-life-colors---greys-and-neutrals--cl-white);
+  font-size: var(--_canada-life-typography---typography--paragraph);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  font-weight: 600;
+  transition: box-shadow .2s, background-color .4s, transform .4s;
+  display: inline-flex;
+}
+
+.button-only-icon:hover {
+  background-color: var(--_canada-life-colors---red--cl-medium-red);
+  color: var(--_canada-life-colors---greys-and-neutrals--cl-white);
+  box-shadow: 0 4px 12px #00000026;
+}
+
+.button-only-icon:active {
+  background-color: var(--_canada-life-colors---red--cl-dark-red);
+}
+
+.button-only-icon:focus {
+  box-sizing: content-box;
+  outline-color: var(--_canada-life-colors---red--cl-red-web);
+  outline-offset: 3px;
+  outline-width: 3px;
+  outline-style: solid;
+  box-shadow: 0 0 0 3px #fff;
+}
+
+.button-only-icon.is-text {
+  color: #000;
+  background-color: #0000;
+  border: 2px solid #0000;
+}
+
+.button-only-icon.is-small {
+  padding: .5rem 1.25rem;
+}
+
+.button-only-icon.is-large {
+  padding: 1rem 2rem;
+}
+
+.button-only-icon.is-secondary {
+  color: #000;
+  background-color: #0000;
+  border: 2px solid #000;
+  border-bottom-width: .125rem;
+}
+
+.button-only-icon.is-secondary.is-small {
+  padding: .5rem 1.25rem;
+}
+
+.button-only-icon.is-icon {
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  display: flex;
+}
+
+.button-only-icon.is-link {
+  color: #000;
+  background-color: #0000;
+  border-style: none;
+  padding: .25rem 0;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.button-only-icon.is-link.is-icon {
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  display: flex;
+}
+
+.button-only-icon.info {
+  background-color: var(--_canada-life-colors---ui-support-colors--info);
+  color: var(--_canada-life-colors---greys-and-neutrals--cl-white);
+}
+
+.button-only-icon.blue {
+  background-color: var(--_canada-life-colors---ui-support-colors--info);
+  color: #fff;
+}
+
+.button-only-icon.blue.small {
+  font-size: var(--_canada-life-typography---typography--small-paragraph);
+}
+
+.button-only-icon.tiny {
+  font-size: var(--_canada-life-typography---typography--xsmall-paragraph);
+}
+
+.icon-1x1-button-font-size {
+  font-size: inherit;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  width: 1em;
+  height: 1em;
+  display: flex;
+}
+
+.swiper-nav-wrapper {
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.swiper-pagination {
+  grid-column-gap: 0rem;
+  grid-row-gap: 0rem;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.swiper-pagination-bullet {
+  border: .25rem solid var(--white);
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-light-grey-03);
+  perspective-origin: 0%;
+  transform-origin: 0%;
+  cursor: pointer;
+  border-radius: 100rem;
+  width: 1rem;
+  height: 1rem;
+  transition: transform .2s cubic-bezier(.445, .05, .55, .95), width .2s cubic-bezier(.445, .05, .55, .95);
+}
+
+.swiper-pagination-bullet:hover {
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-grey-base);
+  filter: none;
+}
+
+.swiper-pagination-bullet:active {
+  transform: scale(.95);
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-grey-base);
+  filter: none;
+  width: 4rem;
+}
+
+.cl-footer-second {
+  background-color: var(--_canada-life-colors---red--cl-red-web);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.footer-logo {
+  width: 125px;
+}
+
+.cl-footer-first {
+  background-color: var(--_canada-life-colors---red--cl-dark-red);
+  height: 0;
+}
+
+.footer-logo-link {
+  float: right;
+}
+
+.cl-copy-text {
+  color: var(--color--white);
+  margin-right: 1rem;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.cl-copy-text.microtext-footer-right {
+  color: #ffffff4f;
+  font-size: 13px;
+  display: inline-block;
+}
+
+.cl-copy-text.microtext-footer-right.as-link {
+  text-decoration: none;
+  transition: color .15s;
+}
+
+.cl-copy-text.microtext-footer-right.as-link:hover {
+  color: #fff;
+}
+
+.footer-container {
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+}
+
+.big-card-vertical-wrapper {
+  grid-column-gap: 5rem;
+  grid-row-gap: 5rem;
+  flex-flow: column;
+  display: flex;
+}
+
+.color-card-wrapper {
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  flex-flow: wrap;
+  margin-top: 1.5rem;
+  display: flex;
+}
+
+.color-card {
+  border-top-left-radius: var(--_canada-life-tokens---border-radius--small);
+  border-top-right-radius: var(--_canada-life-tokens---border-radius--small);
+  border-bottom-left-radius: var(--_canada-life-tokens---border-radius--small);
+  border-bottom-right-radius: var(--_canada-life-tokens---border-radius--small);
+  overflow: hidden;
+  box-shadow: 0 1px 4px #00000029;
+}
+
+.color-block {
+  height: 10rem;
+}
+
+.color-block.a20a29 {
+  background-color: var(--_canada-life-colors---red--cl-red-web);
+}
+
+.color-block._850822 {
+  background-color: var(--_canada-life-colors---red--cl-medium-red);
+}
+
+.color-block._6d071c {
+  background-color: var(--_canada-life-colors---red--cl-dark-red);
+}
+
+.color-block._525146 {
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-dark-grey);
+}
+
+.color-block._6d6e68 {
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-dark-grey-02);
+}
+
+.color-block._93948e {
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-grey-base);
+}
+
+.color-block.d2d2cf {
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-light-grey-03);
+}
+
+.color-block.f0f0ef {
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-light-grey-02);
+}
+
+.color-block.f7f7f7 {
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-light-grey-01);
+}
+
+.color-block._838271 {
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-brand-grey);
+}
+
+.color-block.ffffff {
+  border-bottom: 1px solid var(--_canada-life-colors---greys-and-neutrals--cl-light-grey-02);
+  background-color: var(--white);
+}
+
+.color-block._36362f {
+  background-color: var(--_canada-life-colors---greys-and-neutrals--cl-black);
+}
+
+.color-block._005656 {
+  background-color: var(--_canada-life-colors---ui-support-colors--cl-secondary);
+}
+
+.color-block._007f7f {
+  background-color: var(--_canada-life-colors---ui-support-colors--success);
+}
+
+.color-block.f2faf9 {
+  background-color: var(--_canada-life-colors---ui-support-colors--success-light);
+}
+
+.color-block.d20d35 {
+  background-color: var(--_canada-life-colors---ui-support-colors--error);
+}
+
+.color-block.feeff2 {
+  background-color: var(--_canada-life-colors---ui-support-colors--error-light);
+}
+
+.color-block.b08824 {
+  background-color: var(--_canada-life-colors---ui-support-colors--warning);
+}
+
+.color-block.faf5e8 {
+  background-color: var(--_canada-life-colors---ui-support-colors--warning-light);
+}
+
+.color-block._007cbf {
+  background-color: var(--_canada-life-colors---ui-support-colors--info);
+}
+
+.color-block.e8f7ff {
+  background-color: var(--_canada-life-colors---ui-support-colors--info-light);
+}
+
+.color-block.f7eff6 {
+  background-color: var(--_canada-life-colors---ui-color-badges--cl-badge-neutral-02);
+}
+
+.color-block.d9f7ff {
+  background-color: var(--_canada-life-colors---ui-color-badges--cl-badge-neutral-01);
+}
+
+.color-block.f0f6dd {
+  background-color: var(--_canada-life-colors---ui-color-badges--cl-badge-positive);
+}
+
+.color-block.fcf1c5 {
+  background-color: var(--_canada-life-colors---ui-color-badges--cl-badge-warning);
+}
+
+.color-block.e7f6f4 {
+  background-color: var(--_canada-life-colors---ui-color-badges--cl-badge-brand);
+}
+
+.color-block._5f5aa2 {
+  background-color: var(--_canada-life-colors---data-visualization--data-visualization-07);
+}
+
+.color-block.bd7cb5 {
+  background-color: var(--_canada-life-colors---data-visualization--data-visualization-06);
+}
+
+.color-block._00659b {
+  background-color: var(--_canada-life-colors---data-visualization--data-visualization-05);
+}
+
+.color-block._00a1ce {
+  background-color: var(--_canada-life-colors---data-visualization--data-visualization-04);
+}
+
+.color-block._7e9e27 {
+  background-color: var(--_canada-life-colors---data-visualization--data-visualization-03);
+}
+
+.color-block._3aa493 {
+  background-color: var(--_canada-life-colors---data-visualization--data-visualization-02);
+}
+
+.color-block._006565 {
+  background-color: var(--_canada-life-colors---data-visualization--data-visualization-01);
+}
+
+.color-card-text-wrapper {
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
+  text-wrap: balance;
+  flex-flow: column;
+  padding: 1.5rem;
+  display: flex;
+}
+
+.color-copy-wrapper {
+  color: var(--black);
+  justify-content: space-between;
+  align-items: center;
+  font-family: foco, sans-serif;
+  font-size: 1.75rem;
+  text-decoration: none;
+  display: flex;
+}
+
+.color-copy-wrapper:hover {
+  color: var(--color--brand-color-2);
+}
+
+.ds-inspect-toggle {
+  z-index: 8;
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
+  font-size: var(--_canada-life-typography---typography--xsmall-paragraph);
+  background-color: #0000;
+  margin-left: auto;
+  padding: 0;
+  font-weight: 600;
+  display: none;
+  position: fixed;
+  top: .8rem;
+  right: .8rem;
+}
+
+.ds-inspect-panel {
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: var(--white);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: var(--white);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--white);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: var(--white);
+  border-top-left-radius: var(--_canada-life-tokens---border-radius--large);
+  border-top-right-radius: var(--_canada-life-tokens---border-radius--large);
+  border-bottom-left-radius: var(--_canada-life-tokens---border-radius--large);
+  border-bottom-right-radius: var(--_canada-life-tokens---border-radius--large);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  color: var(--white);
+  z-index: 9999;
+  background-color: #36362f8c;
+  width: 20rem;
+  height: calc(100vh - 5.5rem);
+  padding: 2rem;
+  display: none;
+  position: fixed;
+  top: 4.5rem;
+  right: 1rem;
+  overflow: auto;
+}
+
+.ds-inspect-overlay {
+  border-top-left-radius: var(--_canada-life-tokens---border-radius--small);
+  border-top-right-radius: var(--_canada-life-tokens---border-radius--small);
+  border-bottom-left-radius: var(--_canada-life-tokens---border-radius--small);
+  border-bottom-right-radius: var(--_canada-life-tokens---border-radius--small);
+  outline-color: var(--_canada-life-colors---ui-support-colors--warning);
+  outline-offset: 3px;
+  pointer-events: none;
+  z-index: 9998;
+  outline-width: 2px;
+  outline-style: dashed;
+  display: none;
+  position: fixed;
 }
 
 @media screen and (max-width: 991px) {
@@ -4814,6 +5621,25 @@ figcaption {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
+
+  .col-66 {
+    min-width: calc(33.333% - 1.33333rem);
+  }
+
+  .tablet-100 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .padding-section-large-2 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .footer-logo {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -5103,6 +5929,52 @@ figcaption {
   .heading-style-giant {
     font-size: 2.5rem;
   }
+
+  .col-33 {
+    min-width: calc(50% - 1.25rem);
+    max-width: calc(50% - 1.25rem);
+  }
+
+  .ml-100 {
+    min-width: 100%;
+    max-width: none;
+  }
+
+  .container-2 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .ml-50 {
+    min-width: calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
+
+  .col-50 {
+    min-width: calc(50% - 1rem);
+  }
+
+  .tablet-100 {
+    max-width: 100%;
+  }
+
+  .padding-section-large-2 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .swiper-2 {
+    width: 100vw;
+  }
+
+  .footer-logo {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .cl-copy-text {
+    column-count: 1;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -5196,6 +6068,34 @@ figcaption {
 
   .footer_column-wrapper {
     grid-row-gap: 48px;
+  }
+
+  .col-33, .ml-100 {
+    min-width: 100%;
+    max-width: none;
+  }
+
+  .col-25 {
+    min-width: calc(50% - 1.25rem);
+    max-width: calc(50% - 1.25rem);
+  }
+
+  .m-100, .col-66, .ml-50, .col-33-50 {
+    min-width: 100%;
+    max-width: none;
+  }
+
+  .col-50 {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .tablet-100 {
+    max-width: 100%;
+  }
+
+  .cl-copy-text {
+    column-count: 1;
   }
 }
 
