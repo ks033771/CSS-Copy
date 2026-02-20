@@ -3188,6 +3188,10 @@ figcaption {
   border-bottom-width: .125rem;
 }
 
+.button.is-secondary:hover {
+  background-color: #fff0;
+}
+
 .button.is-secondary.is-small {
   padding: .5rem 1.25rem;
 }
