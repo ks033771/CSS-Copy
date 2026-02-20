@@ -2071,7 +2071,7 @@ textarea.w-input, textarea.w-select {
   --_canada-life-tokens---border-radius--button: 4px;
   --_canada-life-colors---greys-and-neutrals--cl-white: white;
   --_canada-life-typography---typography--lead-paragraph: 1.5rem;
-  --_canada-life-colors---ui-support-colors--info: #007cbf;
+  --_canada-life-colors---ui-support-colors--cl-secondary: #005656;
   --white: var(--_canada-life-colors---greys-and-neutrals--cl-white);
   --black: var(--_canada-life-colors---greys-and-neutrals--cl-black);
   --color--brand-color-1: var(--_canada-life-colors---red--cl-red-web);
@@ -2086,11 +2086,11 @@ textarea.w-input, textarea.w-select {
   --_canada-life-tokens---border-radius--round: 10rem;
   --_canada-life-colors---ui-support-colors--info-light: #e8f7ff;
   --_canada-life-colors---ui-support-colors--success-light: #f2faf9;
-  --_canada-life-colors---ui-support-colors--cl-secondary: #005656;
   --_canada-life-colors---ui-support-colors--warning-light: #faf5e8;
   --_canada-life-colors---data-visualization--data-visualization-08: #b08824;
   --_canada-life-tokens---border-radius--large: 1.5rem;
   --_canada-life-colors---ui-color-badges--cl-badge-neutral-01: #d9f7ff;
+  --_canada-life-colors---ui-support-colors--info: #007cbf;
   --color--sdsssd\<deleted\|variable-9eb1f6db-da42-569f-d15e-3d4f3d518ebf\>: white;
   --_canada-life-colors---ui-support-colors--success: #007f7f;
   --_canada-life-colors---greys-and-neutrals--cl-dark-grey: #525146;
@@ -3130,6 +3130,8 @@ figcaption {
 
 .button {
   box-sizing: content-box;
+  grid-column-gap: .75rem;
+  grid-row-gap: .75rem;
   border-radius: var(--_canada-life-tokens---border-radius--button);
   background-color: var(--_canada-life-colors---red--cl-red-web);
   color: var(--_canada-life-colors---greys-and-neutrals--cl-white);
@@ -3170,22 +3172,25 @@ figcaption {
 }
 
 .button.is-small {
+  grid-column-gap: .625rem;
+  grid-row-gap: .625rem;
   font-size: var(--_canada-life-typography---typography--xsmall-paragraph);
   min-width: auto;
   min-height: auto;
-  padding: .7rem 1.25rem;
+  padding: .7rem 1rem;
 }
 
 .button.is-large {
+  grid-column-gap: 1.25rem;
+  grid-row-gap: 1.25rem;
   font-size: var(--_canada-life-typography---typography--lead-paragraph);
-  padding: 1rem 2rem;
+  padding: 1rem 1.75rem;
 }
 
 .button.is-secondary {
-  color: #000;
+  border: 1px solid var(--_canada-life-colors---greys-and-neutrals--cl-black);
+  color: var(--_canada-life-colors---red--cl-red-web);
   background-color: #0000;
-  border: 2px solid #000;
-  border-bottom-width: .125rem;
 }
 
 .button.is-secondary.is-small {
@@ -3222,7 +3227,7 @@ figcaption {
 }
 
 .button.info {
-  background-color: var(--_canada-life-colors---ui-support-colors--info);
+  background-color: var(--_canada-life-colors---ui-support-colors--cl-secondary);
   color: var(--_canada-life-colors---greys-and-neutrals--cl-white);
 }
 
@@ -4011,8 +4016,8 @@ figcaption {
   flex: none;
   justify-content: center;
   align-items: center;
-  width: 1em;
-  height: 1em;
+  width: 1.25em;
+  height: 1.25em;
   display: flex;
 }
 
