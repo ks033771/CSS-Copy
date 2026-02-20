@@ -2069,10 +2069,10 @@ textarea.w-input, textarea.w-select {
   --font--navbar-width: 220px;
   --_canada-life-colors---greys-and-neutrals--cl-light-grey-03: #d2d2cf;
   --_canada-life-tokens---border-radius--button: 4px;
-  --color--brand-color-1: var(--_canada-life-colors---red--cl-red-web);
   --_canada-life-colors---greys-and-neutrals--cl-white: white;
   --_canada-life-typography---typography--lead-paragraph: 1.5rem;
   --_canada-life-colors---ui-support-colors--info: #007cbf;
+  --color--brand-color-1: var(--_canada-life-colors---red--cl-red-web);
   --color--brand-color-2: var(--_canada-life-colors---greys-and-neutrals--cl-brand-grey);
   --color--navbar-text-color: var(--black);
   --_canada-life-tokens---border-radius--small: .5rem;
@@ -3131,7 +3131,7 @@ figcaption {
 .button {
   box-sizing: content-box;
   border-radius: var(--_canada-life-tokens---border-radius--button);
-  background-color: var(--color--brand-color-1);
+  background-color: var(--_canada-life-colors---red--cl-red-web);
   color: var(--_canada-life-colors---greys-and-neutrals--cl-white);
   font-size: var(--_canada-life-typography---typography--paragraph);
   text-align: center;

@@ -1400,7 +1400,7 @@
     ".align-center {\nmargin-left: auto;\n  margin-right: auto;\n}"
   ],
   "button": [
-    ".button {\nbox-sizing: content-box;\n  border-radius: 4px;\n  background-color: var(--_canada-life-colors---red--cl-red-web);\n  color: white;\n  font-size: 1.125rem;\n  text-align: center;\n  justify-content: center;\n  align-items: center;\n  min-width: 9rem;\n  max-width: 22rem;\n  min-height: 2.25rem;\n  padding: .5rem 1.25rem;\n  font-weight: 600;\n  transition: box-shadow .2s, background-color .4s, transform .4s;\n  display: inline-flex;\n}",
+    ".button {\nbox-sizing: content-box;\n  border-radius: 4px;\n  background-color: #a20a29;\n  color: white;\n  font-size: 1.125rem;\n  text-align: center;\n  justify-content: center;\n  align-items: center;\n  min-width: 9rem;\n  max-width: 22rem;\n  min-height: 2.25rem;\n  padding: .5rem 1.25rem;\n  font-weight: 600;\n  transition: box-shadow .2s, background-color .4s, transform .4s;\n  display: inline-flex;\n}",
     ".button:hover {\nbackground-color: #850822;\n  color: white;\n  box-shadow: 0 4px 12px #00000026;\n}",
     ".button:active {\nbackground-color: #6d071c;\n}",
     ".button:focus-visible, .button[data-wf-focus-visible] {\noutline-color: #a20a29;\n  outline-offset: 3px;\n  outline-width: 3px;\n  box-shadow: 0 0 0 3px #fff;\n}"
@@ -1414,14 +1414,14 @@
     ".button.is-text:focus-visible, .button.is-text[data-wf-focus-visible] {\n  outline-color: #a20a29;\n  outline-offset: 3px;\n  outline-width: 3px;\n  box-shadow: 0 0 0 3px #fff;\n}"
   ],
   "button.is-small": [
-    ".button.is-small {\n  box-sizing: content-box;\n  border-radius: 4px;\n  background-color: var(--_canada-life-colors---red--cl-red-web);\n  color: white;\n  font-size: .875rem;\n  text-align: center;\n  justify-content: center;\n  align-items: center;\n  min-width: auto;\n  max-width: 22rem;\n  min-height: auto;\n  padding: .7rem 1.25rem;\n  font-weight: 600;\n  transition: box-shadow .2s, background-color .4s, transform .4s;\n  display: inline-flex;\n}",
+    ".button.is-small {\n  box-sizing: content-box;\n  border-radius: 4px;\n  background-color: #a20a29;\n  color: white;\n  font-size: .875rem;\n  text-align: center;\n  justify-content: center;\n  align-items: center;\n  min-width: auto;\n  max-width: 22rem;\n  min-height: auto;\n  padding: .7rem 1.25rem;\n  font-weight: 600;\n  transition: box-shadow .2s, background-color .4s, transform .4s;\n  display: inline-flex;\n}",
     ".button.is-small:hover {\n  background-color: #850822;\n  color: white;\n  box-shadow: 0 4px 12px #00000026;\n}",
     ".button.is-small:active {\n  background-color: #6d071c;\n}",
     ".button.is-small:focus-visible, .button.is-small[data-wf-focus-visible] {\n  outline-color: #a20a29;\n  outline-offset: 3px;\n  outline-width: 3px;\n  box-shadow: 0 0 0 3px #fff;\n}"
   ],
   "7rem": [],
   "button.is-large": [
-    ".button.is-large {\n  box-sizing: content-box;\n  border-radius: 4px;\n  background-color: var(--_canada-life-colors---red--cl-red-web);\n  color: white;\n  font-size: 1.5rem;\n  text-align: center;\n  justify-content: center;\n  align-items: center;\n  min-width: 9rem;\n  max-width: 22rem;\n  min-height: 2.25rem;\n  padding: 1rem 2rem;\n  font-weight: 600;\n  transition: box-shadow .2s, background-color .4s, transform .4s;\n  display: inline-flex;\n}",
+    ".button.is-large {\n  box-sizing: content-box;\n  border-radius: 4px;\n  background-color: #a20a29;\n  color: white;\n  font-size: 1.5rem;\n  text-align: center;\n  justify-content: center;\n  align-items: center;\n  min-width: 9rem;\n  max-width: 22rem;\n  min-height: 2.25rem;\n  padding: 1rem 2rem;\n  font-weight: 600;\n  transition: box-shadow .2s, background-color .4s, transform .4s;\n  display: inline-flex;\n}",
     ".button.is-large:hover {\n  background-color: #850822;\n  color: white;\n  box-shadow: 0 4px 12px #00000026;\n}",
     ".button.is-large:active {\n  background-color: #6d071c;\n}",
     ".button.is-large:focus-visible, .button.is-large[data-wf-focus-visible] {\n  outline-color: #a20a29;\n  outline-offset: 3px;\n  outline-width: 3px;\n  box-shadow: 0 0 0 3px #fff;\n}"
@@ -1433,13 +1433,13 @@
     ".button.is-secondary:focus-visible, .button.is-secondary[data-wf-focus-visible] {\n  outline-color: #a20a29;\n  outline-offset: 3px;\n  outline-width: 3px;\n  box-shadow: 0 0 0 3px #fff;\n}"
   ],
   "button.is-secondary.is-small": [
-    ".button.is-secondary.is-small {\n  box-sizing: content-box;\n  border-radius: 4px;\n  background-color: var(--_canada-life-colors---red--cl-red-web);\n  color: white;\n  font-size: 1.125rem;\n  text-align: center;\n  justify-content: center;\n  align-items: center;\n  min-width: 9rem;\n  max-width: 22rem;\n  min-height: 2.25rem;\n  padding: .5rem 1.25rem;\n  font-weight: 600;\n  transition: box-shadow .2s, background-color .4s, transform .4s;\n  display: inline-flex;\n}",
+    ".button.is-secondary.is-small {\n  box-sizing: content-box;\n  border-radius: 4px;\n  background-color: #a20a29;\n  color: white;\n  font-size: 1.125rem;\n  text-align: center;\n  justify-content: center;\n  align-items: center;\n  min-width: 9rem;\n  max-width: 22rem;\n  min-height: 2.25rem;\n  padding: .5rem 1.25rem;\n  font-weight: 600;\n  transition: box-shadow .2s, background-color .4s, transform .4s;\n  display: inline-flex;\n}",
     ".button.is-secondary.is-small:hover {\n  background-color: #850822;\n  color: white;\n  box-shadow: 0 4px 12px #00000026;\n}",
     ".button.is-secondary.is-small:active {\n  background-color: #6d071c;\n}",
     ".button.is-secondary.is-small:focus-visible, .button.is-secondary.is-small[data-wf-focus-visible] {\n  outline-color: #a20a29;\n  outline-offset: 3px;\n  outline-width: 3px;\n  box-shadow: 0 0 0 3px #fff;\n}"
   ],
   "button.is-icon": [
-    ".button.is-icon {\n  box-sizing: content-box;\n  border-radius: 4px;\n  background-color: var(--_canada-life-colors---red--cl-red-web);\n  color: white;\n  font-size: 1.125rem;\n  text-align: center;\n  justify-content: center;\n  align-items: center;\n  min-width: 9rem;\n  max-width: 22rem;\n  min-height: 2.25rem;\n  padding: .5rem 1.25rem;\n  font-weight: 600;\n  transition: box-shadow .2s, background-color .4s, transform .4s;\n  display: flex;\n  grid-column-gap: 1rem;\n  grid-row-gap: 1rem;\n  flex-direction: row;\n  text-decoration: none;\n}",
+    ".button.is-icon {\n  box-sizing: content-box;\n  border-radius: 4px;\n  background-color: #a20a29;\n  color: white;\n  font-size: 1.125rem;\n  text-align: center;\n  justify-content: center;\n  align-items: center;\n  min-width: 9rem;\n  max-width: 22rem;\n  min-height: 2.25rem;\n  padding: .5rem 1.25rem;\n  font-weight: 600;\n  transition: box-shadow .2s, background-color .4s, transform .4s;\n  display: flex;\n  grid-column-gap: 1rem;\n  grid-row-gap: 1rem;\n  flex-direction: row;\n  text-decoration: none;\n}",
     ".button.is-icon:hover {\n  background-color: #850822;\n  color: white;\n  box-shadow: 0 4px 12px #00000026;\n}",
     ".button.is-icon:active {\n  background-color: #6d071c;\n}",
     ".button.is-icon:focus-visible, .button.is-icon[data-wf-focus-visible] {\n  outline-color: #a20a29;\n  outline-offset: 3px;\n  outline-width: 3px;\n  box-shadow: 0 0 0 3px #fff;\n}"
@@ -1451,7 +1451,7 @@
     ".button.is-link:focus-visible, .button.is-link[data-wf-focus-visible] {\n  outline-color: #a20a29;\n  outline-offset: 3px;\n  outline-width: 3px;\n  box-shadow: 0 0 0 3px #fff;\n}"
   ],
   "button.is-link.is-icon": [
-    ".button.is-link.is-icon {\n  box-sizing: content-box;\n  border-radius: 4px;\n  background-color: var(--_canada-life-colors---red--cl-red-web);\n  color: white;\n  font-size: 1.125rem;\n  text-align: center;\n  justify-content: center;\n  align-items: center;\n  min-width: 9rem;\n  max-width: 22rem;\n  min-height: 2.25rem;\n  padding: .5rem 1.25rem;\n  font-weight: 600;\n  transition: box-shadow .2s, background-color .4s, transform .4s;\n  display: flex;\n  grid-column-gap: 1rem;\n  grid-row-gap: 1rem;\n  flex-direction: row;\n  text-decoration: none;\n}",
+    ".button.is-link.is-icon {\n  box-sizing: content-box;\n  border-radius: 4px;\n  background-color: #a20a29;\n  color: white;\n  font-size: 1.125rem;\n  text-align: center;\n  justify-content: center;\n  align-items: center;\n  min-width: 9rem;\n  max-width: 22rem;\n  min-height: 2.25rem;\n  padding: .5rem 1.25rem;\n  font-weight: 600;\n  transition: box-shadow .2s, background-color .4s, transform .4s;\n  display: flex;\n  grid-column-gap: 1rem;\n  grid-row-gap: 1rem;\n  flex-direction: row;\n  text-decoration: none;\n}",
     ".button.is-link.is-icon:hover {\n  background-color: #850822;\n  color: white;\n  box-shadow: 0 4px 12px #00000026;\n}",
     ".button.is-link.is-icon:active {\n  background-color: #6d071c;\n}",
     ".button.is-link.is-icon:focus-visible, .button.is-link.is-icon[data-wf-focus-visible] {\n  outline-color: #a20a29;\n  outline-offset: 3px;\n  outline-width: 3px;\n  box-shadow: 0 0 0 3px #fff;\n}"
