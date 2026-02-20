@@ -54,11 +54,6 @@ function extractCSSVariables(cssText) {
    3️⃣ Klassen + Combo-Klassen extrahieren
 -------------------------------------------------- */
 function extractSelectors(cssText) {
-
-  // Erfasst:
-  // .button
-  // .button.is-small
-  // .button.is-secondary.is-small
   const matches = [...cssText.matchAll(/\.([a-zA-Z0-9_-]+(?:\.[a-zA-Z0-9_-]+)*)/g)]
     .map(m => m[1]);
 
@@ -66,7 +61,7 @@ function extractSelectors(cssText) {
 }
 
 /* --------------------------------------------------
-   4️⃣ CSS Regeln extrahieren (exaktes Matching)
+   4️⃣ CSS Regeln extrahieren
 -------------------------------------------------- */
 function extractRelevantCSS(cssText, selectors) {
 
@@ -76,7 +71,6 @@ function extractRelevantCSS(cssText, selectors) {
   const ruleRegex = /([^{@}][^{]*?)\{([^}]*)\}/g;
 
   function selectorMatches(fullSelector, target) {
-
     const escaped = target.replace(/\./g, "\\.");
     const regex = new RegExp(`(^|\\s|,)\\.${escaped}(?=[\\s:{]|$)`);
     return regex.test(fullSelector);
@@ -84,7 +78,6 @@ function extractRelevantCSS(cssText, selectors) {
 
   let m;
 
-  /* ---------- Normale Regeln ---------- */
   while ((m = ruleRegex.exec(cssText)) !== null) {
 
     const selector = m[1].trim();
@@ -98,7 +91,7 @@ function extractRelevantCSS(cssText, selectors) {
     });
   }
 
-  /* ---------- Media Queries splitten ---------- */
+  /* Media Queries */
   const mediaOuter = /@media[^{]+\{([\s\S]+?)\}\s*\}/g;
   let mm;
 
@@ -138,14 +131,12 @@ function resolveVariables(components, variables) {
 
   Object.keys(components).forEach(key => {
     components[key] = components[key].map(rule => {
-
       Object.keys(variables).forEach(v => {
         rule = rule.replace(
           new RegExp(`var\\(${v}\\)`, "g"),
           variables[v]
         );
       });
-
       return rule;
     });
   });
@@ -154,19 +145,55 @@ function resolveVariables(components, variables) {
 }
 
 /* --------------------------------------------------
-   6️⃣ Doppelte Regeln entfernen
+   6️⃣ Dedupe
 -------------------------------------------------- */
 function dedupeComponents(components) {
-
   Object.keys(components).forEach(key => {
     components[key] = [...new Set(components[key])];
   });
-
   return components;
 }
 
 /* --------------------------------------------------
-   7️⃣ Hauptprozess
+   7️⃣ 🔥 Varianten vollständig auflösen
+-------------------------------------------------- */
+function buildResolvedVariants(components) {
+
+  const resolved = { ...components };
+
+  Object.keys(components).forEach(key => {
+
+    if (!key.includes(".")) return;
+
+    const parts = key.split(".");
+    const base = parts[0];
+
+    if (!components[base]) return;
+
+    const merged = [];
+
+    // Base Regeln umschreiben
+    components[base].forEach(rule => {
+
+      const updated = rule.replace(
+        new RegExp(`\\.${base}`, "g"),
+        "." + key
+      );
+
+      merged.push(updated);
+    });
+
+    // Eigene Regeln hinzufügen
+    components[key].forEach(rule => merged.push(rule));
+
+    resolved[key] = [...new Set(merged)];
+  });
+
+  return resolved;
+}
+
+/* --------------------------------------------------
+   8️⃣ Hauptprozess
 -------------------------------------------------- */
 (async () => {
   try {
@@ -190,6 +217,7 @@ function dedupeComponents(components) {
 
     components = resolveVariables(components, variables);
     components = dedupeComponents(components);
+    components = buildResolvedVariants(components); // 🔥 MAGIC
 
     fs.writeFileSync(
       "components.json",
