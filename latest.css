@@ -3142,8 +3142,7 @@ figcaption {
   align-items: center;
   min-width: 9rem;
   max-width: 22rem;
-  min-height: 2.25rem;
-  padding: .5rem 1.25rem;
+  padding: .75rem 1.25rem;
   font-weight: 600;
   text-decoration: none;
   transition: box-shadow .2s, background-color .4s, transform .4s;
@@ -3233,6 +3232,23 @@ figcaption {
   background-color: var(--white);
   color: var(--black);
   border: 1px solid #000;
+}
+
+.button.icon-only {
+  min-width: auto;
+  max-width: none;
+  padding-left: .75rem;
+  padding-right: .75rem;
+}
+
+.button.icon-only.is-small {
+  padding-left: .7rem;
+  padding-right: .7rem;
+}
+
+.button.icon-only.is-large {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .fs-styleguide_classes {
@@ -4169,6 +4185,7 @@ figcaption {
 .navigation-link.w--current {
   background-color: var(--_canada-life-colors---ui-support-colors--success-light);
   color: var(--_canada-life-colors---ui-support-colors--cl-secondary);
+  cursor: pointer;
   border-bottom-color: currentColor;
   font-weight: 600;
 }
